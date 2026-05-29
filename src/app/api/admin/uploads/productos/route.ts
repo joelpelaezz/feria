@@ -1,6 +1,4 @@
-import { randomUUID } from "node:crypto";
-import { mkdir, writeFile } from "node:fs/promises";
-import path from "node:path";
+import { put } from "@vercel/blob";
 import { NextResponse } from "next/server";
 import { apiAuth } from "@/lib/admin";
 
@@ -28,19 +26,16 @@ export async function POST(request: Request) {
     }
 
     const ext = file.name.split(".").pop()?.toLowerCase() || "jpg";
-    const fileName = `${randomUUID()}.${ext}`;
-    const relativeDir = path.join("uploads", "productos");
-    const uploadDir = path.join(process.cwd(), "public", relativeDir);
-    const filePath = path.join(uploadDir, fileName);
+    const fileName = `productos/${crypto.randomUUID()}.${ext}`;
 
-    await mkdir(uploadDir, { recursive: true });
-
-    const buffer = Buffer.from(await file.arrayBuffer());
-    await writeFile(filePath, buffer);
+    const blob = await put(fileName, file, {
+      access: "public",
+      addRandomSuffix: false,
+    });
 
     return NextResponse.json({
-      url: `/${relativeDir}/${fileName}`,
-      fileName,
+      url: blob.url,
+      fileName: blob.pathname,
     });
   } catch (error) {
     console.error("[ADMIN_PRODUCT_UPLOAD_ERROR]", error);

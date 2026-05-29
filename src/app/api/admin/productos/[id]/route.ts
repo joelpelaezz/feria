@@ -1,6 +1,8 @@
+import { del } from "@vercel/blob";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { apiAuth, canManageProducto } from "@/lib/admin";
+import { parseProductPhotos } from "@/lib/product-images";
 
 // GET /api/admin/productos/[id] - Obtener detalle
 export async function GET(
@@ -131,6 +133,24 @@ export async function DELETE(
     }
     if (!puede) {
       return NextResponse.json({ error: "No autorizado" }, { status: 403 });
+    }
+
+    // Obtener fotos para limpiar Blob antes de borrar
+    const producto = await prisma.producto.findUnique({
+      where: { id },
+      select: { fotos: true },
+    });
+
+    if (producto) {
+      const urls = parseProductPhotos(producto.fotos);
+      const blobUrls = urls.filter((url) => url.includes("blob.vercel-storage.com"));
+      for (const url of blobUrls) {
+        try {
+          await del(url);
+        } catch {
+          console.warn(`[BLOB_DELETE_WARN] No se pudo eliminar: ${url}`);
+        }
+      }
     }
 
     await prisma.producto.delete({ where: { id } });
