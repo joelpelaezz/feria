@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#436b58",
+                    "on-primary-container": "#fffcff",
+                    "secondary-fixed": "#c1ecd4",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf9f8",
+                    "surface-tint": "#aa3618",
+                    "on-secondary-fixed": "#002114",
+                    "on-surface-variant": "#58413c",
+                    "on-error": "#ffffff",
+                    "secondary": "#3f6653",
+                    "tertiary-fixed-dim": "#ffb780",
+                    "primary-fixed-dim": "#ffb4a2",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary-container": "#c84c2c",
+                    "tertiary-fixed": "#ffdcc4",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary-fixed-variant": "#881f01",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#ffdbd2",
+                    "tertiary-container": "#a96429",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#8c716a",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-fixed-variant": "#6f3800",
+                    "surface-variant": "#e5e2e1",
+                    "on-tertiary-fixed": "#2f1400",
+                    "background": "#fcf9f8",
+                    "inverse-surface": "#313030",
+                    "on-surface": "#1c1b1b",
+                    "on-background": "#1c1b1b",
+                    "inverse-on-surface": "#f3f0ef",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#8b4c11",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#274e3d",
+                    "primary": "#a63416",
+                    "secondary-container": "#beead1",
+                    "inverse-primary": "#ffb4a2",
+                    "surface-container-high": "#eae7e7",
+                    "on-primary-fixed": "#3c0800",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#a5d0b9",
+                    "outline-variant": "#e0bfb8",
+                    "on-tertiary-container": "#fffcff",
+                    "surface-dim": "#dcd9d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "48px",
+                    "gutter": "12px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "md": "20px",
+                    "lg": "32px",
+                    "container-margin": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Lexend"],
+                    "headline-sm": ["Lexend"],
+                    "label-sm": ["Lexend"],
+                    "label-lg": ["Lexend"],
+                    "display-lg": ["Lexend"],
+                    "body-md": ["Lexend"],
+                    "headline-md": ["Lexend"],
+                    "price-display": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["14px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "label-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "price-display": ["22px", {"lineHeight": "24px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Lexend', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Scrollbar for chips */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 max-w-7xl mx-auto border-b border-outline/10 bg-surface dark:bg-surface">
+<div class="flex items-center gap-md">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">FerIA</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-lg">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Catalog</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Fairs</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Swap</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Impact</a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="hidden md:block px-md py-xs rounded-full bg-primary text-on-primary font-label-lg hover:opacity-80 transition-opacity">Merchant Login</button>
+<button class="md:hidden p-2 text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin pt-md pb-xl">
+<!-- Search & Filter Controls -->
+<section class="flex flex-col gap-md mb-lg">
+<div class="relative w-full max-w-2xl mx-auto">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container rounded-xl border-2 border-transparent focus:border-primary focus:bg-surface outline-none transition-all font-body-md text-on-surface shadow-sm" placeholder="Search products, merchants, or crafts..." type="text"/>
+</div>
+<!-- Category Chips -->
+<div class="flex overflow-x-auto no-scrollbar gap-sm py-2">
+<button class="flex-shrink-0 px-md py-2 bg-primary text-on-primary rounded-full font-label-sm shadow-md">All Products</button>
+<button class="flex-shrink-0 px-md py-2 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm hover:bg-secondary-container transition-colors">Handmade Jewelry</button>
+<button class="flex-shrink-0 px-md py-2 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm hover:bg-secondary-container transition-colors">Traditional Textiles</button>
+<button class="flex-shrink-0 px-md py-2 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm hover:bg-secondary-container transition-colors">Local Harvest</button>
+<button class="flex-shrink-0 px-md py-2 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm hover:bg-secondary-container transition-colors">Ceramics</button>
+<button class="flex-shrink-0 px-md py-2 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm hover:bg-secondary-container transition-colors">Upcycled Decor</button>
+<button class="flex-shrink-0 px-md py-2 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm hover:bg-secondary-container transition-colors">Tools</button>
+</div>
+</section>
+<div class="flex flex-col md:flex-row gap-lg">
+<!-- Sidebar Filter -->
+<aside class="hidden md:block w-64 flex-shrink-0 space-y-lg">
+<div class="p-md bg-surface-container-low rounded-xl border border-outline/10">
+<h3 class="font-headline-sm text-on-surface mb-md">Filters</h3>
+<!-- Category Section -->
+<div class="mb-lg">
+<span class="block font-label-lg text-primary mb-sm">Category</span>
+<div class="space-y-sm">
+<label class="flex items-center gap-sm cursor-pointer">
+<input checked="" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md">Fashion &amp; Textiles</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md">Home &amp; Living</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md">Organic Food</span>
+</label>
+</div>
+</div>
+<!-- Size Section -->
+<div class="mb-lg">
+<span class="block font-label-lg text-primary mb-sm">Size</span>
+<div class="grid grid-cols-3 gap-xs">
+<button class="p-2 border border-outline/20 rounded font-label-sm hover:bg-primary-container hover:text-on-primary-container">XS</button>
+<button class="p-2 border border-outline/20 rounded font-label-sm bg-primary text-on-primary">S</button>
+<button class="p-2 border border-outline/20 rounded font-label-sm hover:bg-primary-container hover:text-on-primary-container">M</button>
+<button class="p-2 border border-outline/20 rounded font-label-sm hover:bg-primary-container hover:text-on-primary-container">L</button>
+<button class="p-2 border border-outline/20 rounded font-label-sm hover:bg-primary-container hover:text-on-primary-container">XL</button>
+<button class="p-2 border border-outline/20 rounded font-label-sm hover:bg-primary-container hover:text-on-primary-container">XXL</button>
+</div>
+</div>
+<!-- Price Range -->
+<div class="mb-lg">
+<span class="block font-label-lg text-primary mb-sm">Price Range</span>
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="10000" min="0" type="range"/>
+<div class="flex justify-between mt-xs">
+<span class="text-label-sm text-on-surface-variant">$0</span>
+<span class="text-label-sm text-on-surface-variant">$10.000+</span>
+</div>
+</div>
+<!-- Condition -->
+<div>
+<span class="block font-label-lg text-primary mb-sm">Condition</span>
+<div class="flex flex-col gap-sm">
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="w-5 h-5 text-primary border-outline focus:ring-primary" name="condition" type="radio"/>
+<span class="text-body-md">New</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="w-5 h-5 text-primary border-outline focus:ring-primary" name="condition" type="radio"/>
+<span class="text-body-md">Used</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter lg:gap-md">
+<!-- Card 1 -->
+<article class="group bg-surface flex flex-col border border-outline/10 overflow-hidden transition-transform duration-200 hover:shadow-xl">
+<div class="relative aspect-square bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close-up high-contrast studio photograph of a hand-woven colorful Andean textile. The fabric features intricate geometric patterns in deep reds, earthy terracotta, and forest green. The lighting is warm and directional, emphasizing the tactile texture of the natural wool fibers against a clean, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5T-0asWGZnsxKtkL2708hnPdpQr7a3E1uHUXc9IcDGI3XZy7VhTNS62SjyBngNRsoaYb9CWPJvd-3eQW_YIEMcJDJwKD1deXLDBYZWDbjWeTfxyHrJYNgyr5qRIOdVkWsQPB5IkprPBAY6zH0loJZKo-IjvM8bGEMWVh1CS1im3JzD_OsnKfzrJpmzcA8KojzRpZjEV9wcea9dJtWq6BMAXOy27IOtmfsGx3yojUKO5O0aXbv-Hehp_v0kZ6ARgtoExxxJKyVSNVU"/>
+<span class="absolute top-2 left-2 px-3 py-1 bg-secondary text-on-secondary text-label-sm rounded shadow-sm">Trueque</span>
+</div>
+<div class="p-sm flex flex-col justify-between flex-grow">
+<div>
+<h4 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2">Hand-woven Wool Poncho</h4>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="text-label-sm text-on-surface-variant">Artesanos de Palpalá</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-md">
+<span class="text-price-display text-primary">$4.500</span>
+<button class="p-2 bg-on-secondary-container text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group bg-surface flex flex-col border border-outline/10 overflow-hidden transition-transform duration-200 hover:shadow-xl">
+<div class="relative aspect-square bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Professional high-key photography of an artisanal ceramic bowl set. The bowls feature a speckled terracotta glaze with a minimalist forest green rim. The arrangement is clean and modern, set on a bright sandstone surface under natural morning sunlight, evoking a warm and communal artisanal vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb_Dcnwt_WmbRYY-TCj21-WU404Pi6Tx6_cxTCPrQUz7QtH1KSqs9mXxelXVoP8tVKiKjJNa3rt-28XDdufnVtyMkxQgf8Cnt65P-Nf9zoTV7n9kxU0vY51XfTGomP1g6jZh7CdSkJ8gd8K7sU-7TaDHmkV61eciZ1GagPc5UijjNVzkekm1G9YxnNr_-KwnSi_6hkMo7fxcafC6iHbNwhWNDUmnhNp8zzFBPGyVvABLjlXRSgZ4SxdPwvtYe72Dfev6vcTQW4BtWP"/>
+<span class="absolute top-2 left-2 px-3 py-1 bg-tertiary text-on-tertiary-container text-label-sm rounded shadow-sm">New</span>
+</div>
+<div class="p-sm flex flex-col justify-between flex-grow">
+<div>
+<h4 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2">Terracotta Ceramic Bowl</h4>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm text-on-surface-variant">Doña Maria Ceramics</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-md">
+<span class="text-price-display text-primary">$1.200</span>
+<button class="p-2 bg-on-secondary-container text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group bg-surface flex flex-col border border-outline/10 overflow-hidden transition-transform duration-200 hover:shadow-xl">
+<div class="relative aspect-square bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Lush, high-contrast close-up of organic mountain honey in a glass jar. The honey has a deep golden sun hue, glowing brightly against a dark wooden background. The packaging is rustic with a simple paper label tied with twine, emphasizing local artisanal pride and high-quality natural produce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD12X-YxN-jTnisxqL2FD-4LvD8ut7hjfSqZiuBGJMYlym2zazFvxLP4adRZIoxf7X3xFbzOGYAogcX8hJcbwbQeJXX6aoVkU2eaF3ESH6bGCFXb_-rFsMq6z-LTKj6dkz66Cndg6-ZAnX2pC_JViNFl2vvHxCFsiXffDfWtf-1BRziOiHa4N3Ket-UQXvKOQODjk0O0_-94EJi5hTRgxPgcWKPm6mJIeRp4bm6WCo4n6lnzPSeGRu4U30IcuxszuKSiiAvNqXqdzvy"/>
+<span class="absolute top-2 left-2 px-3 py-1 bg-secondary text-on-secondary text-label-sm rounded shadow-sm">Pure Organic</span>
+</div>
+<div class="p-sm flex flex-col justify-between flex-grow">
+<div>
+<h4 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2">Mountain Harvest Honey</h4>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="text-label-sm text-on-surface-variant">Honey Hills Collective</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-md">
+<span class="text-price-display text-primary">$850</span>
+<button class="p-2 bg-on-secondary-container text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group bg-surface flex flex-col border border-outline/10 overflow-hidden transition-transform duration-200 hover:shadow-xl">
+<div class="relative aspect-square bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern artisanal leather satchel displayed on a bright white stone pedestal. The leather is a rich terracotta color with heavy-duty visible stitching in forest green. The lighting is direct and bright, highlighting the premium craftsmanship and high-contrast details for easy visibility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxll5_MgDHT6iqZk_5uESxGc3FmduRfT6KoGvNFozDJMKZNOcut9ffKh-R8B2bg0VKWZ4VZ7CgrfV0uEd9oEhWPhKlNu29gkYA1LFXPY4sMhxOgm9EkqUreTOMTGZl23QDrGTD3O8llrIgkko-hvoz1RPI7nSVNoyeuKoM1CeiRo6Bmbup7QTlS51yBo-oH71QcF0oN23xrs9w05RLdjyT2NeefVx9YnPn8ycZ2zJ5gSMtVGjpl979UV664hn13sZ-nrkqbbJxvvbr"/>
+</div>
+<div class="p-sm flex flex-col justify-between flex-grow">
+<div>
+<h4 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2">Rustic Leather Satchel</h4>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm text-on-surface-variant">Leatherworks Palpalá</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-md">
+<span class="text-price-display text-primary">$8.900</span>
+<button class="p-2 bg-on-secondary-container text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 5 (Repeated pattern for grid feel) -->
+<article class="group bg-surface flex flex-col border border-outline/10 overflow-hidden transition-transform duration-200 hover:shadow-xl">
+<div class="relative aspect-square bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Vibrant, high-contrast overhead shot of a collection of artisanal silver and gemstone jewelry. Each piece is unique, featuring turquoise and onyx stones set in polished silver. The background is a textured light wood, and the midday sun creates crisp, sharp shadows that emphasize the high-end quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSltKsacuPuVSPS8Ck3DQNnZXKHbsxSKcC93WXUqNdaqivqoG7OfldULRePCz1Qm7IaQCE18_ZzrCpRpzhlsWyMWH556AZ_LQIp8RXkL_Nysl610YJ8I_90dY-ZnvlF6-lIBfMObIxwIVAaNfR1JWvDUkusA6p9b7X3L0TUmbNsG39j8XvHy1j9RvCGoZL0fagk3htpfpS9veVIg4AUB6kqw_X53Oa1NwPTPWDnz4HxZmnJMGbA9R_rFds9DLeeExt5W9lOXMsTRyw"/>
+<span class="absolute top-2 left-2 px-3 py-1 bg-secondary text-on-secondary text-label-sm rounded shadow-sm">Swap Available</span>
+</div>
+<div class="p-sm flex flex-col justify-between flex-grow">
+<div>
+<h4 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2">Silver &amp; Turquoise Pendant</h4>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm text-on-surface-variant">Silver Moon Studio</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-md">
+<span class="text-price-display text-primary">$3.200</span>
+<button class="p-2 bg-on-secondary-container text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="group bg-surface flex flex-col border border-outline/10 overflow-hidden transition-transform duration-200 hover:shadow-xl">
+<div class="relative aspect-square bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close-up photograph of organic yerba mate in a traditional wooden gourd. The scene is bright and earthy, with the green herb vividly contrasting against the rich brown wood of the gourd and a bright cream linen tablecloth. Soft natural light highlights the authenticity of this traditional Argentine product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY-FTDeXovn_sZKOmMvpw-LHXozERAi-CVfmMgx4mbvXkBbXDADa3Bm9HfwCFUXT9eT9pFGtIm3Gb41o1XnXAsfd4EsOrSqNAG8zJh7Y4I6bkhH_oxkHP1xNmtt8xGoNacGiFVSRw-544ZKAftZ13ns_Pg0GAEQzn7B91aP-GPEEffK5zRMW-iT0byuDaoxy5KLhydghYBcf0lSGW4HcUy7JxTDHIBUaYg2nUV9M05XlUtdl5tmiFHxCmUOrGnrmbFwfrS8lB81hTb"/>
+</div>
+<div class="p-sm flex flex-col justify-between flex-grow">
+<div>
+<h4 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2">Organic Yerba Mate Premium</h4>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="text-label-sm text-on-surface-variant">Alto Bosque Organics</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-md">
+<span class="text-price-display text-primary">$600</span>
+<button class="p-2 bg-on-secondary-container text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Infinite Scroll Indicator -->
+<div class="mt-xl py-lg flex flex-col items-center gap-sm">
+<div class="flex gap-2">
+<div class="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
+<div class="w-2 h-2 bg-primary rounded-full animate-bounce delay-100"></div>
+<div class="w-2 h-2 bg-primary rounded-full animate-bounce delay-200"></div>
+</div>
+<span class="text-label-sm text-on-surface-variant">Discovering more treasures for you...</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-lg px-container-margin flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-low border-t border-outline/5">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<span class="text-headline-sm font-headline-sm font-bold text-primary">FerIA</span>
+<p class="text-body-md text-on-surface-variant">© 2024 FerIA - Made for Palpalá with Community Pride</p>
+</div>
+<div class="flex gap-lg">
+<a class="text-on-surface-variant hover:text-primary text-label-sm" href="#">Social Mission</a>
+<a class="text-on-surface-variant hover:text-primary text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary text-label-sm" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary text-label-sm" href="#">Privacy Policy</a>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 md:hidden border-t border-outline/10 bg-surface dark:bg-surface">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-label-sm font-label-sm">Catalog</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high">
+<span class="material-symbols-outlined">sync_alt</span>
+<span class="text-label-sm font-label-sm">Swap</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-sm font-label-sm">Impact</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</button>
+</nav>
+<!-- Floating Filter Button (Mobile only) -->
+<button class="md:hidden fixed bottom-24 right-6 p-4 bg-primary text-on-primary rounded-full shadow-lg z-40 flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<script>
+        // Micro-interaction for category chips
+        const chips = document.querySelectorAll('.flex-shrink-0');
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary');
+                    c.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+                });
+                chip.classList.add('bg-primary', 'text-on-primary');
+                chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+            });
+        });
+
+        // Simple search focus state interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.02]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.02]');
+        });
+    </script>
+</body></html>

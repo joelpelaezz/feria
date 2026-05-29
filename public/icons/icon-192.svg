@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <rect width="192" height="192" rx="32" fill="#faf7f2"/>
+  <!-- Shopping bag icon -->
+  <g transform="translate(56, 40)">
+    <rect x="10" y="30" width="60" height="75" rx="8" fill="#a63416" opacity="0.15"/>
+    <rect x="15" y="30" width="50" height="70" rx="6" fill="#a63416"/>
+    <path d="M10 35 L20 10 Q25 0 40 0 Q55 0 60 10 L70 35" fill="none" stroke="#a63416" stroke-width="5" stroke-linecap="round"/>
+    <path d="M20 55 L60 55" stroke="#faf7f2" stroke-width="3" stroke-linecap="round"/>
+    <path d="M20 65 L55 65" stroke="#faf7f2" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <circle cx="40" cy="85" r="12" fill="#3f6653"/>
+    <text x="40" y="90" text-anchor="middle" fill="#faf7f2" font-family="system-ui" font-size="14" font-weight="bold">F</text>
+  </g>
+</svg>

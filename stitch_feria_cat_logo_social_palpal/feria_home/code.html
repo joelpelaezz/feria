@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FerIA - Marketplace Local de Palpalá</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-container": "#436b58",
+                      "on-primary-container": "#fffcff",
+                      "secondary-fixed": "#c1ecd4",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#fcf9f8",
+                      "surface-tint": "#aa3618",
+                      "on-secondary-fixed": "#002114",
+                      "on-surface-variant": "#58413c",
+                      "on-error": "#ffffff",
+                      "secondary": "#3f6653",
+                      "tertiary-fixed-dim": "#ffb780",
+                      "primary-fixed-dim": "#ffb4a2",
+                      "surface-container-low": "#f6f3f2",
+                      "surface-container-highest": "#e5e2e1",
+                      "primary-container": "#c84c2c",
+                      "tertiary-fixed": "#ffdcc4",
+                      "surface-bright": "#fcf9f8",
+                      "on-primary-fixed-variant": "#881f01",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#ffdbd2",
+                      "tertiary-container": "#a96429",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#8c716a",
+                      "surface-container": "#f0eded",
+                      "on-tertiary-fixed-variant": "#6f3800",
+                      "surface-variant": "#e5e2e1",
+                      "on-tertiary-fixed": "#2f1400",
+                      "background": "#fcf9f8",
+                      "inverse-surface": "#313030",
+                      "on-surface": "#1c1b1b",
+                      "on-background": "#1c1b1b",
+                      "inverse-on-surface": "#f3f0ef",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#8b4c11",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed-variant": "#274e3d",
+                      "primary": "#a63416",
+                      "secondary-container": "#beead1",
+                      "inverse-primary": "#ffb4a2",
+                      "surface-container-high": "#eae7e7",
+                      "on-primary-fixed": "#3c0800",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed-dim": "#a5d0b9",
+                      "outline-variant": "#e0bfb8",
+                      "on-tertiary-container": "#fffcff",
+                      "surface-dim": "#dcd9d9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "48px",
+                      "gutter": "12px",
+                      "base": "8px",
+                      "sm": "12px",
+                      "xs": "4px",
+                      "md": "20px",
+                      "lg": "32px",
+                      "container-margin": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Lexend"],
+                      "headline-sm": ["Lexend"],
+                      "label-sm": ["Lexend"],
+                      "label-lg": ["Lexend"],
+                      "display-lg": ["Lexend"],
+                      "body-md": ["Lexend"],
+                      "headline-md": ["Lexend"],
+                      "price-display": ["Lexend"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-sm": ["14px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "label-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "price-display": ["22px", {"lineHeight": "24px", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-pattern {
+            background-color: #fcf9f8;
+            background-image: radial-gradient(#e0bfb8 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .glass-card {
+            background: rgba(255, 252, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(140, 113, 106, 0.1);
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 max-w-7xl mx-auto bg-surface border-b border-outline/10">
+<div class="text-headline-md font-headline-md font-bold text-primary">FerIA</div>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-lg font-label-lg" href="#">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 text-label-lg font-label-lg" href="#">Catalog</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 text-label-lg font-label-lg" href="#">Fairs</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 text-label-lg font-label-lg" href="#">Swap</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 text-label-lg font-label-lg" href="#">Impact</a>
+</nav>
+<button class="bg-primary text-on-primary px-md py-xs rounded-full font-label-lg hover:opacity-80 transition-opacity">
+            Merchant Login
+        </button>
+</header>
+<main class="max-w-7xl mx-auto pb-xl">
+<!-- Hero Section -->
+<section class="relative w-full py-xl px-container-margin overflow-hidden hero-pattern">
+<div class="relative z-10 text-center flex flex-col items-center gap-lg">
+<h1 class="text-display-lg font-display-lg text-on-surface max-w-2xl leading-tight">
+                    Encontrá lo que buscas antes de ir a la <span class="text-primary">feria</span>
+</h1>
+<!-- Large Search Bar -->
+<div class="w-full max-w-2xl mt-md">
+<div class="relative flex items-center bg-surface-container-lowest border-2 border-outline/20 focus-within:border-primary rounded-xl overflow-hidden px-md py-sm transition-all shadow-sm">
+<span class="material-symbols-outlined text-outline mr-sm">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-body-lg font-body-lg placeholder:text-on-surface-variant/50" placeholder="Buscar por producto, puesto o categoría..." type="text"/>
+<button class="bg-primary-container text-on-primary-container px-lg py-xs rounded-lg font-label-lg ml-md">Buscar</button>
+</div>
+</div>
+<p class="text-on-surface-variant text-body-lg max-w-xl">
+                    La comunidad de Palpalá unida en un solo lugar. Ropa, artesanías, y más, directo desde el corazón de la feria.
+                </p>
+</div>
+<!-- Asymmetric Floating Elements Decoration -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-tertiary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-60 h-60 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Category Grid (Bento Style) -->
+<section class="px-container-margin mt-xl">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-lg border-l-4 border-primary pl-md">Explorá por Categoría</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-sm">
+<!-- Ropa Mujer -->
+<div class="group cursor-pointer bg-surface-container-low p-md rounded-xl flex flex-col items-center gap-sm transition-all hover:bg-primary/5 border border-outline/5">
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center text-on-primary-fixed-variant group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">woman</span>
+</div>
+<span class="text-label-lg font-label-lg text-on-surface">Ropa Mujer</span>
+</div>
+<!-- Ropa Hombre -->
+<div class="group cursor-pointer bg-surface-container-low p-md rounded-xl flex flex-col items-center gap-sm transition-all hover:bg-primary/5 border border-outline/5">
+<div class="w-16 h-16 bg-secondary-fixed rounded-full flex items-center justify-center text-on-secondary-fixed-variant group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">man</span>
+</div>
+<span class="text-label-lg font-label-lg text-on-surface">Ropa Hombre</span>
+</div>
+<!-- Niños -->
+<div class="group cursor-pointer bg-surface-container-low p-md rounded-xl flex flex-col items-center gap-sm transition-all hover:bg-primary/5 border border-outline/5">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-full flex items-center justify-center text-on-tertiary-fixed-variant group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">child_care</span>
+</div>
+<span class="text-label-lg font-label-lg text-on-surface">Niños</span>
+</div>
+<!-- Zapatos -->
+<div class="group cursor-pointer bg-surface-container-low p-md rounded-xl flex flex-col items-center gap-sm transition-all hover:bg-primary/5 border border-outline/5">
+<div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center text-on-surface group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">footprint</span>
+</div>
+<span class="text-label-lg font-label-lg text-on-surface">Zapatos</span>
+</div>
+<!-- Accesorios -->
+<div class="group cursor-pointer bg-surface-container-low p-md rounded-xl flex flex-col items-center gap-sm transition-all hover:bg-primary/5 border border-outline/5 md:col-span-2 lg:col-span-1">
+<div class="w-16 h-16 bg-primary-fixed-dim rounded-full flex items-center justify-center text-on-primary-fixed-variant group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">watch</span>
+</div>
+<span class="text-label-lg font-label-lg text-on-surface">Accesorios</span>
+</div>
+</div>
+</section>
+<!-- Comerciantes Destacados (High Contrast Cards) -->
+<section class="px-container-margin mt-xl">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="text-headline-md font-headline-md text-on-surface border-l-4 border-secondary pl-md">Comerciantes Destacados</h2>
+<a class="text-primary font-label-lg flex items-center gap-xs" href="#">Ver todos <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline/10 rounded-xl overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
+<div class="aspect-square w-full relative">
+<img class="w-full h-full object-cover" data-alt="A portrait of a smiling local merchant woman in her textile stall at a vibrant open-air market in Palpalá. She is surrounded by colorful hand-woven blankets and ethnic patterns. The lighting is warm and natural, reflecting a bright morning in Argentina. The colors are rich with terracotta and forest green accents, creating a modern yet artisanal community atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa93-_TMUQWHCs5THEhvWYY49-ZQQZaWnHC8t86twuEg4-AYo3fDe-PxhZaNsRZDTqblndnA7B3XtN8r468tjjMRDH71EgTTmJNmtB-OxKZmZAe33Uz8O0uubomcTktmRR2jL_LmHHZQGODTmHV9qNvb7jTnwXlXGCwHjMgwDEJIVEROmMmuAh1jXhYF7gTzxoxsxPAm9xkZkyrOkaHupXxQZ6KIttDtMvHR_TW7JKRWrTl1HGXvvWXS9eHQqvrUmaz6cfa2weT1BB"/>
+<div class="absolute top-sm left-sm">
+<span class="bg-secondary text-on-secondary text-label-sm font-label-sm px-sm py-1 rounded-full flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">eco</span> Verificado
+                            </span>
+</div>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Puesto 15</h3>
+<p class="text-on-surface-variant font-body-md italic">Ropa Americana &amp; Vintage</p>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Feria del Sur - Pasillo Central</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline/10 rounded-xl overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
+<div class="aspect-square w-full relative">
+<img class="w-full h-full object-cover" data-alt="A friendly male artisan standing behind a wooden counter filled with handcrafted leather goods and belts in an outdoor marketplace setting. The background shows other market stalls under the bright afternoon sun. The image has high contrast, clear details, and a welcoming artisanal vibe. The color palette emphasizes natural browns, clay reds, and deep greens, highlighting local Palpalá heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCchegb1uE0t4GRi8gcSeEJFu4T7gxuM9OKjVaxS7MZDQayE6vBGzb5fwFtxJbKHgVYOP8KKBefzf3Y3eLtiulFfUdz6WlzK01C2q4ZVxLy6tRJklwwm1y71cTJirVhokcVMp4jNAzFQTr9NZbLa_UuN37AIpT0IjIBYS_GesMgmXNZ_5xiJG_sWqMARfb2GeHNfUtfDw7q8MpASS3WgIUq9r26B9DHSqJqqNrLcKk0aeO-VWT0ftV7megs3BUxd4T37QoEuJd90ZIN"/>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Don Jorge</h3>
+<p class="text-on-surface-variant font-body-md italic">Cuero &amp; Artesanías</p>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Feria Municipal - Local 4</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline/10 rounded-xl overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
+<div class="aspect-square w-full relative">
+<img class="w-full h-full object-cover" data-alt="A young local woman smiling warmly in front of her bright clothing stall specializing in handmade children's apparel. The stall is located in a sun-drenched town square fair. The style is modern-artisanal with a high-contrast focus on her friendly expression and the vibrant textiles. Soft sunlight filters through the awnings, creating a warm and trustworthy community feeling typical of Jujuy, Argentina." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3KCbjTTMzaUcblyUm-eC4oCCfonD3778h3cSEk9I04BpQ4uLFnFDMjwEyFpNInoX8irOgmOV5veu8NhjQiQ-rn-Vc23bwiFB8FttIWJxKHiR4RV2a9MtRns18gi7Xv-xfNm-04WUp8WAxaS8Wn2HOdiz3EOZ7M48io2vTHcAu-MJwUc9RuucPOXY8L87AjkVXOI-NaN8jd_uFrHsMNzT3RWUKcgEAMceGW7n_vDD5fKAE72iov4eZjA8JazDnxxRPhpJPuD1nueo1"/>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Creaciones Ana</h3>
+<p class="text-on-surface-variant font-body-md italic">Ropa de Niños Tejida</p>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Feria Central - Sábados</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest border border-outline/10 rounded-xl overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
+<div class="aspect-square w-full relative">
+<img class="w-full h-full object-cover" data-alt="A close-up of a skilled artisan's hands working on a ceramic piece at an outdoor market stall in Palpalá. The setting is a bustling communal fair with high-contrast shadows and highlights from the intense daylight. The mood is authentic and artisanal, emphasizing local pride and tradition. The color palette features warm earth tones, deep terracotta reds, and soft forest greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLj6FjCSvuzheFm6cWoDM240UV-Mwvzld_bI8D9h-2N_84Hiak3Fo6i_NKM5vpSnbRM3TnbJ5lAOsoDAFnkmrhGPKVNmotwHQ63hex9zzJnHLt4NhXODWbqKjB4e13aNivF7vtDi_58QXhttsleCRme4DONb3NrLZNTMEOjFvt4Ee2qUR8Kh_gx9CZivgn-8HPBKH2XwU1RFUf9dVrP9-Dt4or0lZFHpcxCxIZlwOg0FMkd6o8RlVNZuP3xhaVWhdfuCx5Q8SLZNoI"/>
+<div class="absolute top-sm left-sm">
+<span class="bg-secondary text-on-secondary text-label-sm font-label-sm px-sm py-1 rounded-full flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">eco</span> Verificado
+                            </span>
+</div>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Arte en Barro</h3>
+<p class="text-on-surface-variant font-body-md italic">Decoración y Hogar</p>
+<div class="flex items-center gap-xs mt-xs">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Mercado de Pulgas</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Próximas Ferias (Quick List) -->
+<section class="px-container-margin mt-xl">
+<div class="bg-primary text-on-primary rounded-2xl p-lg flex flex-col md:flex-row items-center gap-lg">
+<div class="flex-1">
+<h2 class="text-headline-md font-headline-md mb-xs">Próximas ferias en Palpalá</h2>
+<p class="text-on-primary/80 font-body-md">No te pierdas los días de trueque y ofertas especiales.</p>
+</div>
+<div class="w-full md:w-auto flex flex-col gap-sm">
+<div class="bg-on-primary-container/10 border border-on-primary-container/20 rounded-xl p-md flex items-center gap-md">
+<div class="bg-on-primary-container text-primary font-bold px-sm py-xs rounded text-center min-w-[60px]">
+<div class="text-label-sm">MIÉ</div>
+<div class="text-headline-sm">24</div>
+</div>
+<div>
+<div class="font-bold text-label-lg">Feria del Sur</div>
+<div class="text-label-sm opacity-80">Av. Libertad esq. San Martín</div>
+</div>
+</div>
+<div class="bg-on-primary-container/10 border border-on-primary-container/20 rounded-xl p-md flex items-center gap-md">
+<div class="bg-on-primary-container text-primary font-bold px-sm py-xs rounded text-center min-w-[60px]">
+<div class="text-label-sm">SÁB</div>
+<div class="text-headline-sm">27</div>
+</div>
+<div>
+<div class="font-bold text-label-lg">Feria Municipal Central</div>
+<div class="text-label-sm opacity-80">Predio de las Aguas Danzantes</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-lg px-container-margin flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-low border-t border-outline/5 mt-xl">
+<div class="flex flex-col gap-xs text-center md:text-left">
+<div class="text-headline-sm font-headline-sm font-bold text-primary">FerIA</div>
+<p class="text-on-surface-variant font-body-md">© 2024 FerIA - Made for Palpalá with Community Pride</p>
+</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm" href="#">Social Mission</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm" href="#">Privacy Policy</a>
+</div>
+<div class="flex gap-md">
+<button class="w-10 h-10 rounded-full bg-outline/10 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-xl">share</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-outline/10 flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-xl">forum</span>
+</button>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 md:hidden bg-surface border-t border-outline/10">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-transform duration-150 scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-label-sm font-label-sm">Catalog</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">sync_alt</span>
+<span class="text-label-sm font-label-sm">Swap</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-sm font-label-sm">Impact</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<!-- FAB (Contextual for Landing/Home) -->
+<button class="fixed bottom-24 right-container-margin md:bottom-10 md:right-10 bg-primary text-on-primary w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined text-2xl">add_shopping_cart</span>
+</button>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'scale(1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

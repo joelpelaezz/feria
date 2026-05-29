@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#436b58",
+                    "on-primary-container": "#fffcff",
+                    "secondary-fixed": "#c1ecd4",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf9f8",
+                    "surface-tint": "#aa3618",
+                    "on-secondary-fixed": "#002114",
+                    "on-surface-variant": "#58413c",
+                    "on-error": "#ffffff",
+                    "secondary": "#3f6653",
+                    "tertiary-fixed-dim": "#ffb780",
+                    "primary-fixed-dim": "#ffb4a2",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary-container": "#c84c2c",
+                    "tertiary-fixed": "#ffdcc4",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary-fixed-variant": "#881f01",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#ffdbd2",
+                    "tertiary-container": "#a96429",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#8c716a",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-fixed-variant": "#6f3800",
+                    "surface-variant": "#e5e2e1",
+                    "on-tertiary-fixed": "#2f1400",
+                    "background": "#fcf9f8",
+                    "inverse-surface": "#313030",
+                    "on-surface": "#1c1b1b",
+                    "on-background": "#1c1b1b",
+                    "inverse-on-surface": "#f3f0ef",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#8b4c11",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#274e3d",
+                    "primary": "#a63416",
+                    "secondary-container": "#beead1",
+                    "inverse-primary": "#ffb4a2",
+                    "surface-container-high": "#eae7e7",
+                    "on-primary-fixed": "#3c0800",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#a5d0b9",
+                    "outline-variant": "#e0bfb8",
+                    "on-tertiary-container": "#fffcff",
+                    "surface-dim": "#dcd9d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "48px",
+                    "gutter": "12px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "md": "20px",
+                    "lg": "32px",
+                    "container-margin": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Lexend"],
+                    "headline-sm": ["Lexend"],
+                    "label-sm": ["Lexend"],
+                    "label-lg": ["Lexend"],
+                    "display-lg": ["Lexend"],
+                    "body-md": ["Lexend"],
+                    "headline-md": ["Lexend"],
+                    "price-display": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["14px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "label-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "price-display": ["22px", {"lineHeight": "24px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .artisanal-border {
+            border: 1px solid rgba(63, 102, 83, 0.1);
+        }
+        .thumb-zone-active {
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 max-w-7xl mx-auto border-b border-outline/10 bg-surface dark:bg-surface">
+<div class="text-headline-md font-headline-md font-bold text-primary">FerIA</div>
+<div class="hidden md:flex gap-lg items-center">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">Catalog</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-lg text-label-lg" href="#">Fairs</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">Swap</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">Impact</a>
+</div>
+<button class="bg-primary text-on-primary px-md py-xs rounded-full font-label-lg text-label-lg hover:opacity-90 transition-opacity">Merchant Login</button>
+</nav>
+<main class="max-w-7xl mx-auto px-container-margin py-lg thumb-zone-active">
+<!-- Header Section -->
+<header class="mb-xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-xs">Próximas Ferias en Palpalá</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Encontrá el corazón del comercio local en cada plaza.</p>
+</header>
+<!-- Asymmetric Bento Grid for Fairs -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Featured Active Fair Card -->
+<div class="relative overflow-hidden flex flex-col group cursor-pointer lg:col-span-2 artisanal-border bg-surface-container rounded-xl transition-all duration-300 hover:border-primary/30" onclick="window.location.href='#'">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-secondary text-on-secondary px-sm py-xs rounded-full font-label-sm text-label-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+                        Hoy hay feria
+                    </span>
+</div>
+<div class="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A vibrant outdoor street market in Palpalá during a golden hour sunset. Local artisans display handmade pottery and woven textiles on rustic wooden tables. The atmosphere is warm and communal, with string lights beginning to glow overhead. The style is modern-artisanal, featuring high-contrast terracotta and forest green tones in the surrounding nature and decor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOrGg5BBZ050YrLeJcgtDvkOt-KK4IpMWANmJG3wpbU4GnRlXFzRjD65rtYqpQ7qIKx80iCxm80qnvzh4sQPyq06K-COdm_0FVDucO5wHcH5vi0NQC-jZtBuW45q3Fg-Ub3n9d5YF-Ow3hW6ctYU7zgPAMBgT6QLIow3TeRa2RZ7KxhUh_TanYONxMtbf-D0TIA6skyKbUv3-1pX-8CzdB28BsO9WdJe2YBc-oiY3GuGyyd8fJQU7azGo5lx0gEyvZQ-TqEZofIrwm"/>
+</div>
+<div class="p-lg flex flex-col md:flex-row md:justify-between md:items-end gap-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Feria del Sur</h2>
+<div class="flex items-center gap-xs text-on-surface-variant mb-base">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-label-lg text-label-lg">Plaza Central, Barrio San Cayetano</span>
+</div>
+<div class="flex items-center gap-xs text-secondary font-bold">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-lg text-label-lg">Mié y Vie 9:00 — 13:00hs</span>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<div class="flex -space-x-3 overflow-hidden">
+<img alt="Merchant" class="inline-block h-10 w-10 rounded-full ring-2 ring-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFpfTfFLtjIhmyfXysRHoWdJ-r5tGY9GGvM9C2AL-Nvm_egufu_P9uoXHHF6ctOYTceZtKmsindgWK6gnYmdrpqainFobYHar1UuqT5nPZNxWXJFlKhYmxngpW8KkrIRNBlAVj6WPcRJJKyxFf2pOtz8BUKXdwWVyPJiPqjAUhnFaIEvGjaWb3Q20GLCQ7DqKYXE_14hwqnBeRHZipishgIBZBHAbQ1VFcDaFTuJyav2JKvcSa93d6quaI6fLGd99f6MHs_N-NwfKV"/>
+<img alt="Merchant" class="inline-block h-10 w-10 rounded-full ring-2 ring-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB21kR6_tFhGAzL6UCvTUULF3zH2eaR4rK0zZYwrhYrFThTZbjE_xZcpVk1W8chgH7twsrkJuwSqYhjuJM6LHonyA7m4WLaV2MRZbj3kXHQHVdUTsMTS6fGScpSfSfc_j5o1T9bViaDpk7J8GzoiSrwf8-r-LLXMtRxs_N0IjsRV3uTRBb45J9Y-Cf-m2qKLsohoqDm3XlEkqPXqK70SCit7qzbEoiG8uSGfBFWi4kGMuo9eAaDZ6pvVNbhwrOnwjD_sxJInX5aERj0"/>
+<img alt="Merchant" class="inline-block h-10 w-10 rounded-full ring-2 ring-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARq89OgHx27ymh4Nn8DOU59nMQvnZvn_RMMDakI2nYJcVBarRPYc4uyx0BRLoGEq92lTvmUppTT4aBputOj2C0EEJa89iNkMq4H-my-Kt4xYQKv0plYWFMgQl8ED5y8IlF3jiH7bkfkfOuaCr-TJEvo3AyJRsepIP_chc8ro0AaXZsO5UqQpO31uvyaSELQcu_ySXeS2zELVunCgtDJ_4wHlA6bWcrIghwEhxDHwQWirPpOohpuAdCgXwAi3t1B1yUQija2ZDQwOzM"/>
+</div>
+<span class="text-on-surface-variant font-label-sm text-label-sm">+42 puesteros</span>
+</div>
+</div>
+</div>
+<!-- Standard Card 2 -->
+<div class="flex flex-col artisanal-border bg-surface-container rounded-xl overflow-hidden group cursor-pointer transition-all duration-300 hover:border-primary/30" onclick="window.location.href='#'">
+<div class="aspect-square w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A close-up shot of fresh organic vegetables and artisanal cheeses arranged beautifully at a local Palpalá morning market. The lighting is crisp and natural, highlighting the textures of the produce. High-contrast colors like deep forest green and vibrant orange are prominent. The setting feels neighborhood-oriented and trustworthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwbWrND46Ix4zpcrEdW8DRiqS5Snw4riTyuOlo_IElWJDlC0VYtwNCgoFSSzkEsRq9vVwXkxEB4T5pGka0-BPiRJeCzHlKtfbeT3xcdaG-rXApXU7_uWt25YkHaOvbWC09VADvET-zuQ8Ea5jYYJ5ugIcEK23v9-dPnpYQozLX3ESC68SkyvkfF--OB5bkK5ocgneueEWmefLVxRpzfMyy9x9-Z4ZW0Bu1UTj6T9OABxzZTilTIDZnkVeFli2BVkhaRg-yoWjLuysZ"/>
+</div>
+<div class="p-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Paseo de las Flores</h3>
+<p class="font-label-lg text-label-lg text-on-surface-variant mb-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+                        Av. Libertad 450
+                    </p>
+<div class="mt-auto pt-md border-t border-outline/10 flex justify-between items-center">
+<span class="text-tertiary font-bold font-label-sm text-label-sm">Sábados 16:00 — 21:00hs</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Standard Card 3 -->
+<div class="flex flex-col artisanal-border bg-surface-container rounded-xl overflow-hidden group cursor-pointer transition-all duration-300 hover:border-primary/30" onclick="window.location.href='#'">
+<div class="aspect-square w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A wide shot of a bustling community swap meet in a sun-drenched park in Palpalá. Neighbors are seen exchanging items like books, plants, and clothing. The mood is joyful and connected. Visual accents include hand-painted signs and colorful tablecloths, all set against a clean, modern-artisanal layout with earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2yU7bdS5H4ZkJfVtwwp5js3q1rS6WmdwnmvWyn-X9i8YSYLtW2gXrsJ8XwpuC5i_r406Y6xCeLzK-IrHGk6OvXrnPSP2LDS32uASASStPO__xK7EHzTcZ0zY9Ssicp4erfonvoKRaiJZL2KTj0xL1F7ZoSmhfUuqnKiU4Yb6IerlVHxRniP6P6yNxwOw3Mfcy1BlsRja2Q-RZN3hN3Aa9LBwmD2N0jZXvoo3QUxFRQbQBUtXStmxLRKyJHBmfTIal7iGAIuLjO3V8"/>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Feria El Trueque</h3>
+<span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-0.5 rounded uppercase tracking-wider font-bold">Pop-up</span>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface-variant mb-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+                        Polideportivo Municipal
+                    </p>
+<div class="mt-auto pt-md border-t border-outline/10 flex justify-between items-center">
+<span class="text-tertiary font-bold font-label-sm text-label-sm">Domingos 10:00 — 18:00hs</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Map Placeholder / Interactive Accent -->
+<div class="relative bg-secondary-fixed text-on-secondary-fixed rounded-xl p-lg flex flex-col justify-center items-center text-center group cursor-pointer artisanal-border overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 24px 24px;"></div>
+<span class="material-symbols-outlined text-display-lg mb-md" style="font-variation-settings: 'FILL' 1;">map</span>
+<h3 class="font-headline-md text-headline-md mb-xs">Mapa de Ferias</h3>
+<p class="font-body-md text-body-md mb-md">Explorá todas las ubicaciones en tiempo real</p>
+<button class="bg-secondary text-on-secondary px-lg py-sm rounded-full font-label-lg text-label-lg hover:scale-105 transition-transform">Ver Mapa</button>
+</div>
+<!-- Standard Card 4 -->
+<div class="flex flex-col artisanal-border bg-surface-container rounded-xl overflow-hidden group cursor-pointer transition-all duration-300 hover:border-primary/30" onclick="window.location.href='#'">
+<div class="aspect-square w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A peaceful craft market scene focusing on handmade leather goods and wooden kitchenware in an artisanal workshop setting. Soft side-lighting emphasizes the craftsmanship. The color palette features rich browns and deep greens, consistent with the Palpalá local pride and high-performance mobile UI aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ3ZfShDEn7XtDLVIl9TreP7KaVVb39rGL4Sk6vdZbh8_YBP06LftMcQafgcycrMLvIpBy84y2BK2JbYWYKt5aZDfSlnHCCGCyRdqKucVkjDIyru1RV5cAOhRP_ltei1hBjgUd0MMF6UwjLi1leXCZgYQs5bN0MtJoWxms4npFsWJCO749sdZ66KeTsSNHFGaWcX9_YymfnzEHAKRUX06ah_LggX1G7DTVN7pIdcgHxRJFLB3ELHep2d1UW6UhRARB1jO-2eGKDzaK"/>
+</div>
+<div class="p-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Feria de Artesanos</h3>
+<p class="font-label-lg text-label-lg text-on-surface-variant mb-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+                        Paseo de los Artesanos
+                    </p>
+<div class="mt-auto pt-md border-t border-outline/10 flex justify-between items-center">
+<span class="text-tertiary font-bold font-label-sm text-label-sm">Jueves 17:00 — 22:00hs</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-lg px-container-margin flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-low border-t border-outline/5">
+<div class="flex flex-col gap-xs items-center md:items-start">
+<div class="text-headline-sm font-headline-sm font-bold text-primary">FerIA</div>
+<p class="text-body-md font-body-md text-on-surface-variant text-center md:text-left">© 2024 FerIA - Made for Palpalá with Community Pride</p>
+</div>
+<div class="flex gap-md flex-wrap justify-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Social Mission</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Privacy Policy</a>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 md:hidden border-t border-outline/10 bg-surface dark:bg-surface">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-label-sm font-label-sm">Catalog</span>
+</div>
+<!-- Active Tab: Fairs (Mapped to 'Home/Explorer' intent but specifically Fairs here) -->
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event</span>
+<span class="text-label-sm font-label-sm">Fairs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined">sync_alt</span>
+<span class="text-label-sm font-label-sm">Swap</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</div>
+</nav>
+<!-- FAB (Contextual for Fairs screen: Filter/Search) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center md:bottom-12 md:right-12 hover:scale-110 active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0px)';
+            });
+        });
+    </script>
+</body></html>

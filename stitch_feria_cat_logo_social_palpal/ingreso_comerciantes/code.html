@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#436b58",
+                        "on-primary-container": "#fffcff",
+                        "secondary-fixed": "#c1ecd4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fcf9f8",
+                        "surface-tint": "#aa3618",
+                        "on-secondary-fixed": "#002114",
+                        "on-surface-variant": "#58413c",
+                        "on-error": "#ffffff",
+                        "secondary": "#3f6653",
+                        "tertiary-fixed-dim": "#ffb780",
+                        "primary-fixed-dim": "#ffb4a2",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary-container": "#c84c2c",
+                        "tertiary-fixed": "#ffdcc4",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary-fixed-variant": "#881f01",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#ffdbd2",
+                        "tertiary-container": "#a96429",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#8c716a",
+                        "surface-container": "#f0eded",
+                        "on-tertiary-fixed-variant": "#6f3800",
+                        "surface-variant": "#e5e2e1",
+                        "on-tertiary-fixed": "#2f1400",
+                        "background": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "on-surface": "#1c1b1b",
+                        "on-background": "#1c1b1b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#8b4c11",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#274e3d",
+                        "primary": "#a63416",
+                        "secondary-container": "#beead1",
+                        "inverse-primary": "#ffb4a2",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary-fixed": "#3c0800",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#a5d0b9",
+                        "outline-variant": "#e0bfb8",
+                        "on-tertiary-container": "#fffcff",
+                        "surface-dim": "#dcd9d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "gutter": "12px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "md": "20px",
+                        "lg": "32px",
+                        "container-margin": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Lexend"],
+                        "headline-sm": ["Lexend"],
+                        "label-sm": ["Lexend"],
+                        "label-lg": ["Lexend"],
+                        "display-lg": ["Lexend"],
+                        "body-md": ["Lexend"],
+                        "headline-md": ["Lexend"],
+                        "price-display": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["14px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "label-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "price-display": ["22px", {"lineHeight": "24px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #fcf9f8;
+        }
+        .login-canvas {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+        }
+        .input-focus-ring:focus {
+            outline: none;
+            border: 2px solid #a63416;
+            box-shadow: 0 0 0 4px rgba(166, 52, 22, 0.1);
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<main class="login-canvas relative overflow-hidden">
+<!-- Abstract Background Shape for Artisanal feel -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary-container opacity-20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-80 h-80 bg-primary-fixed-dim opacity-20 rounded-full blur-3xl"></div>
+<div class="w-full max-w-md z-10 flex flex-col items-center">
+<!-- Minimalist Brand Logo Anchor -->
+<div class="mb-xl text-center">
+<h1 class="text-headline-md font-headline-md font-bold text-primary">FerIA</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest mt-xs">Comunidad Palpalá</p>
+</div>
+<!-- Auth Container -->
+<div class="w-full bg-white border border-outline/10 p-lg rounded-xl shadow-sm">
+<!-- Phone Entry State -->
+<div class="space-y-md" id="phone-step">
+<div class="space-y-xs">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">¡Hola de nuevo!</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Ingresá tu número para comenzar.</p>
+</div>
+<div class="space-y-base">
+<label class="text-label-lg font-label-lg text-on-surface" for="phone">Celular</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-body-md">+54</span>
+<input class="w-full pl-14 pr-4 py-4 bg-surface-container-low border-2 border-transparent rounded-lg font-body-md text-on-surface input-focus-ring transition-all" id="phone" placeholder="388 123 4567" type="tel"/>
+</div>
+</div>
+<button class="w-full h-14 bg-primary text-on-primary font-label-lg rounded-lg flex items-center justify-center gap-base active:scale-95 transition-transform duration-150" onclick="showSmsStep()">
+<span>Continuar</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- SMS Code State (Hidden by default) -->
+<div class="hidden space-y-md" id="sms-step">
+<div class="flex items-center gap-xs -ml-2 mb-sm cursor-pointer text-primary" onclick="showPhoneStep()">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_left">chevron_left</span>
+<span class="text-label-sm font-label-sm">Volver</span>
+</div>
+<div class="space-y-xs">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Verificación</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Enviamos un código SMS a tu celular.</p>
+</div>
+<div class="grid grid-cols-4 gap-sm py-md">
+<input class="w-full h-14 text-center text-headline-sm bg-surface-container-low border-2 border-transparent rounded-lg input-focus-ring" maxlength="1" type="text"/>
+<input class="w-full h-14 text-center text-headline-sm bg-surface-container-low border-2 border-transparent rounded-lg input-focus-ring" maxlength="1" type="text"/>
+<input class="w-full h-14 text-center text-headline-sm bg-surface-container-low border-2 border-transparent rounded-lg input-focus-ring" maxlength="1" type="text"/>
+<input class="w-full h-14 text-center text-headline-sm bg-surface-container-low border-2 border-transparent rounded-lg input-focus-ring" maxlength="1" type="text"/>
+</div>
+<button class="w-full h-14 bg-primary text-on-primary font-label-lg rounded-lg active:scale-95 transition-transform duration-150" onclick="window.location.reload()">
+                        Verificar Código
+                    </button>
+<p class="text-center text-label-sm font-label-sm text-on-surface-variant">
+                        ¿No recibiste nada? <span class="text-primary font-bold cursor-pointer">Reenviar</span>
+</p>
+</div>
+</div>
+<!-- Secondary Actions -->
+<div class="mt-lg w-full flex flex-col gap-base">
+<button class="w-full h-14 border-2 border-secondary text-secondary font-label-lg rounded-lg flex items-center justify-center gap-base bg-white active:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+                    Ingresar como cargador
+                </button>
+<p class="text-center text-label-sm font-label-sm text-on-surface-variant px-lg mt-sm">
+                    Al continuar, aceptas nuestros 
+                    <a class="underline font-bold" href="#">Términos</a> y 
+                    <a class="underline font-bold" href="#">Privacidad</a>.
+                </p>
+</div>
+</div>
+<!-- Atmospheric Image Anchor -->
+<div class="absolute bottom-0 w-full opacity-10 pointer-events-none overflow-hidden h-40">
+<img class="w-full h-full object-cover" data-alt="A sun-drenched, high-contrast photograph of a traditional South American open-air marketplace in Palpalá. The scene captures the warm, artisanal spirit with vibrant textiles, locally grown produce, and the textured surfaces of wooden stalls. The lighting is bright and clear, reflecting a high-performance outdoor interface aesthetic. The color palette is dominated by earthy terracotta, forest greens, and sun-kissed golden tones, conveying a sense of community pride and neighborly trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRSIG73tlqHTSReiBoLKOz2xT1HEJnvyDIbyaPIAhgbS3oC-BP230MbLuKLSJTUCEOa2zHUSu0POosdYnbTPBwH_oGpUZTe4d5pMnYk6lYaT2oeHfur2-22GqNznPIi_DP-PNetmreuh6z7lUgBcWvGeq2WKhVSS8-EVSTOHD28G-NqVMrNxwsbshyzKHG8QhHkhUdJRd1j-42XKgodRaqxszM6GIvXEIzaNviuEfgLkU2pY_ItvIqeevowD9ui1aHRp73crnb_Dw0"/>
+</div>
+</main>
+<!-- Simple micro-interaction scripts -->
+<script>
+        function showSmsStep() {
+            const phoneVal = document.getElementById('phone').value;
+            if(!phoneVal) return; // Simple validation for demo
+            
+            document.getElementById('phone-step').classList.add('hidden');
+            document.getElementById('sms-step').classList.remove('hidden');
+        }
+
+        function showPhoneStep() {
+            document.getElementById('sms-step').classList.add('hidden');
+            document.getElementById('phone-step').classList.remove('hidden');
+        }
+
+        // Auto-focus next input in SMS
+        const inputs = document.querySelectorAll('#sms-step input');
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', () => {
+                if (input.value && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+        });
+    </script>
+</body></html>

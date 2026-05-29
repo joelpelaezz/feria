@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#436b58",
+                    "on-primary-container": "#fffcff",
+                    "secondary-fixed": "#c1ecd4",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf9f8",
+                    "surface-tint": "#aa3618",
+                    "on-secondary-fixed": "#002114",
+                    "on-surface-variant": "#58413c",
+                    "on-error": "#ffffff",
+                    "secondary": "#3f6653",
+                    "tertiary-fixed-dim": "#ffb780",
+                    "primary-fixed-dim": "#ffb4a2",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary-container": "#c84c2c",
+                    "tertiary-fixed": "#ffdcc4",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary-fixed-variant": "#881f01",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#ffdbd2",
+                    "tertiary-container": "#a96429",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#8c716a",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-fixed-variant": "#6f3800",
+                    "surface-variant": "#e5e2e1",
+                    "on-tertiary-fixed": "#2f1400",
+                    "background": "#fcf9f8",
+                    "inverse-surface": "#313030",
+                    "on-surface": "#1c1b1b",
+                    "on-background": "#1c1b1b",
+                    "inverse-on-surface": "#f3f0ef",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#8b4c11",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#274e3d",
+                    "primary": "#a63416",
+                    "secondary-container": "#beead1",
+                    "inverse-primary": "#ffb4a2",
+                    "surface-container-high": "#eae7e7",
+                    "on-primary-fixed": "#3c0800",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#a5d0b9",
+                    "outline-variant": "#e0bfb8",
+                    "on-tertiary-container": "#fffcff",
+                    "surface-dim": "#dcd9d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "48px",
+                    "gutter": "12px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "md": "20px",
+                    "lg": "32px",
+                    "container-margin": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Lexend"],
+                    "headline-sm": ["Lexend"],
+                    "label-sm": ["Lexend"],
+                    "label-lg": ["Lexend"],
+                    "display-lg": ["Lexend"],
+                    "body-md": ["Lexend"],
+                    "headline-md": ["Lexend"],
+                    "price-display": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["14px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "label-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "price-display": ["22px", {"lineHeight": "24px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #a63416;
+            border-radius: 10px;
+        }
+        .glass-effect {
+            background: rgba(252, 249, 248, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- TopNavBar (The Anchor) -->
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 max-w-7xl mx-auto border-b border-outline/10 bg-surface dark:bg-surface">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">
+            FerIA
+        </div>
+<nav class="hidden md:flex gap-lg">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Catalog</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Fairs</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Swap</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Impact</a>
+</nav>
+<button class="bg-primary text-on-primary px-md py-xs rounded-full font-label-lg hover:opacity-90 transition-opacity">
+            Merchant Login
+        </button>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin py-lg pb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Product Gallery Section (Asymmetric / Bento Style) -->
+<section class="lg:col-span-7 space-y-md">
+<div class="relative group">
+<div class="absolute top-md left-md z-10 flex gap-sm">
+<span class="bg-secondary-container text-on-secondary-container px-md py-xs rounded-lg font-label-lg flex items-center gap-xs border border-secondary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sync_alt</span>
+                            Trueque
+                        </span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-md py-xs rounded-lg font-label-lg border border-tertiary/20">
+                            Nuevo
+                        </span>
+</div>
+<div class="aspect-square w-full rounded-xl overflow-hidden bg-surface-container-high border border-outline/10">
+<img alt="Silla Artesanal" class="w-full h-full object-cover" data-alt="A high-quality close-up photograph of a handcrafted artisanal wooden chair with intricate carvings, set in a sun-drenched rustic workshop in Palpalá. The warm sunlight highlights the natural wood grain and textures, creating a welcoming and communal atmosphere. The color palette is dominated by earthy browns, soft terracotta, and subtle forest green accents in the background foliage. The lighting is bright and natural, reflecting a high-contrast modern-artisanal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5JlR1lBQ03yRD1AzR4PcnpaynMbHA7nZ-0Pn6PBonQQ2OYVKMuzh4W-BJxHSmzpd1guE3swEfkJCH5taQVhEg28wGkz87jIQIZt8QBKWcFA-fZ1WPAhTF1cehJ9JnK-x4BMFc1QgMowzJaplFVR8ur_ekzQHIqTibLoCQEwH7FJqEqVQqPiQlnGi3biRxlsAy8XLDHg4iySM7as2YoIO93OQGHk1KEfW6fCJR6ovTdz-QRXwQEauiM0LXeo-9ffHr4raUlq8iJkSR"/>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-sm">
+<div class="aspect-square rounded-lg overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="Close up detail of artisanal wood carving on a chair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmAB4rVfSiB1G4xbfIw6y2MU4KAwM8XOcSeidrDeJAMyQ9MLfLiEC4VJVdzVhOrf8M26tAVy42yba4IATeaf3MmibE6Fw85IYCsEoYKnAD6exAuZFwOpXuI_37MWkNinC22qvXKQD0W-LbdBAinlGAwT8PqBtF3gnbFO67Ym2R9tt5z3GMBnBDG36la2aR0TwdzyISqBexv80JABHxjy6dlvKfVV51UE_VcZNC9eQa7yd401OidC7VWYtMUsfg1Fh9BCsghlfMOK3A"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-outline/10 grayscale hover:grayscale-0 transition-all cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Different angle of a handcrafted wooden furniture piece in a bright studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR2fVirETOWU_w14EIjKi--wYS8e3Hgr-jBBwjPVfwjhW4kjDMEe71mbGrPhbnTgPc-5-DDemL1hukCYAesdLVcf1pVM4puf2qIsi_o9fCCZp5Z4phLlbi6sjmeVRYq6dbsGMUz7gQ5xH5oGm6Jc1vO9kbbS7bvIrAXuEidhJDa7tWHNo1wjpo9zOOh7iIaFR20S7gEu6Qp01wqAt9jZMBE_vwQih7RnCpA85Lx0TQyaP6oEBYiT6fNdMyXvQizgJkXanuOTDD1eOv"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-outline/10 grayscale hover:grayscale-0 transition-all cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A wide shot of an artisan workshop with tools and wood shavings in warm light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjlj8rGkVHW1D5kFcrQpXudcvTXd1phIEFwLDREVQpvtJkCv2dunGhVZRFUaepEOO9n0-Jj21Z4PJlhF2_CtsqY3WKqqY8xUr5pw-js7v_-_ieR7Srfq43iO4gwhExSezb5J4dXlyfcuW8JkOGKfU0E88QtrP9A1_wtqrlnBOpLYp99TWQv5Ge91k1BmXE74LjnTqWbmjg4ZL3waQqQXeTGtxKoUkLugVW9tItK6Dz2S6Wl-LhqNr7j-5-4tW5-1vcbB0NFLsqtBfN"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-outline/10 bg-surface-container-highest flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant">add_a_photo</span>
+</div>
+</div>
+</section>
+<!-- Product Info Section -->
+<section class="lg:col-span-5 flex flex-col gap-lg">
+<div class="space-y-sm">
+<nav class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span>Hogar</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Muebles</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary">Sillas</span>
+</nav>
+<h1 class="text-display-lg font-display-lg text-on-surface leading-tight">Silla de Algarrobo Tallada a Mano</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+                        Pieza única fabricada por artesanos locales de Palpalá. Madera de algarrobo tratada con aceites naturales, diseño ergonómico y detalles florales tallados en el respaldo.
+                    </p>
+</div>
+<div class="flex items-end justify-between py-md border-y border-outline/10">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Precio Sugerido</span>
+<span class="text-[40px] font-bold text-primary leading-none">$12.500</span>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center gap-xs bg-secondary/10 text-secondary px-sm py-1 rounded-full font-label-sm">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+                            Precio Justo
+                        </span>
+</div>
+</div>
+<!-- Specifications Grid -->
+<div class="grid grid-cols-2 gap-md">
+<div class="p-md bg-surface-container-low border border-outline/5 rounded-xl">
+<div class="flex items-center gap-sm mb-xs">
+<span class="material-symbols-outlined text-primary">straighten</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Medidas</span>
+</div>
+<span class="text-headline-sm font-headline-sm">45 x 45 x 95 cm</span>
+</div>
+<div class="p-md bg-surface-container-low border border-outline/5 rounded-xl">
+<div class="flex items-center gap-sm mb-xs">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Estado</span>
+</div>
+<span class="text-headline-sm font-headline-sm">Nuevo</span>
+</div>
+</div>
+<!-- Merchant Profile Glass Card -->
+<div class="glass-effect border border-outline/20 p-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="Artesano" class="w-full h-full object-cover" data-alt="A portrait of a friendly local artisan in Palpalá, wearing a traditional apron and smiling warmly. The background shows a carpentry workshop with soft-focus tools and wood. The lighting is warm and natural, reinforcing the neighborly trust and communal pride of the FerIA brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc0zpgHAD4r3d5EQVSuHNGWl8RHpgO_etS2gXt11lHNEcWNtAEK8Tsa6VQ2EEA8MoSL5CgAtRJAE28zAjowHkmOsoZE_BKZCfmDP6inUmD1bLi1btfeXowwl3CvYf9LPtjzUCjwdgyyV1Bk0sQTECtSLg0yc8vbKINSKlv4vnO6cBDFPoUJJ9pjehMXwnbLAZZ4yg0ySYwETXqqEkfsC1imJFG3h4Dt3y9FHVonJ_3Z4NmjJbQnvybNJX8YVw8OtTGWDCNn_k2JYCx"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Ricardo Gómez</h4>
+<div class="flex items-center gap-xs text-on-surface-variant text-label-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9 (24 ventas)</span>
+</div>
+</div>
+</div>
+<a class="text-primary font-label-lg hover:underline flex items-center gap-xs" href="#">
+                        Ver perfil
+                        <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+<!-- Primary Actions -->
+<div class="space-y-sm pt-md">
+<button class="w-full h-14 bg-[#25D366] text-white flex items-center justify-center gap-md rounded-xl font-headline-sm shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.185-.573c.948.517 1.947.887 3.145.887 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.767-5.766zm3.375 8.203c-.145.409-.847.746-1.161.794-.28.044-.644.077-1.043-.053-.243-.079-.556-.184-.96-.341-1.721-.665-2.831-2.417-2.917-2.531-.086-.114-.693-.923-.693-1.763 0-.84.439-1.252.596-1.42.157-.169.341-.211.455-.211.114 0 .227.001.326.006.104.005.244-.04.381.288.145.347.497 1.211.541 1.3.044.09.073.193.014.312-.059.12-.089.193-.177.296-.088.103-.186.23-.266.308-.09.088-.184.184-.079.363.104.18.463.765.992 1.237.682.608 1.258.797 1.437.887.18.09.288.075.397-.05.109-.125.467-.544.591-.73.125-.187.249-.157.421-.093.171.064 1.085.512 1.272.605.187.094.312.14.357.218.045.078.045.452-.102.861z"></path></svg>
+                        Consultar por WhatsApp
+                    </button>
+<div class="flex gap-sm">
+<button class="flex-1 h-12 border-2 border-primary text-primary rounded-xl font-label-lg flex items-center justify-center gap-xs hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">share</span>
+                            Compartir
+                        </button>
+<button class="w-12 h-12 border border-outline/20 text-on-surface-variant rounded-xl flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Extra Details Bento Grid -->
+<section class="mt-xl grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="p-lg bg-secondary-fixed text-on-secondary-fixed rounded-2xl flex flex-col gap-sm">
+<span class="material-symbols-outlined text-4xl">handshake</span>
+<h3 class="font-headline-sm text-headline-sm">Opción Trueque</h3>
+<p class="text-body-md">Ricardo acepta permutas por herramientas de carpintería o madera de cedro en buen estado. ¡Consulta sin compromiso!</p>
+</div>
+<div class="p-lg bg-surface-container-high border border-outline/10 rounded-2xl flex flex-col gap-sm">
+<span class="material-symbols-outlined text-4xl">local_shipping</span>
+<h3 class="font-headline-sm text-headline-sm">Retiro y Envío</h3>
+<p class="text-body-md">Retiro disponible en Feria de Palpalá los Sábados. Envío a domicilio dentro del radio céntrico con costo adicional.</p>
+</div>
+<div class="p-lg bg-tertiary-fixed text-on-tertiary-fixed rounded-2xl flex flex-col gap-sm">
+<span class="material-symbols-outlined text-4xl">eco</span>
+<h3 class="font-headline-sm text-headline-sm">Material Sostenible</h3>
+<p class="text-body-md">Madera recuperada de podas controladas. Tratada con cera de abejas artesanal, libre de químicos tóxicos.</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only Anchor) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 md:hidden border-t border-outline/10 bg-surface dark:bg-surface">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-label-sm font-label-sm">Catalog</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">sync_alt</span>
+<span class="text-label-sm font-label-sm">Swap</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-sm font-label-sm">Impact</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</div>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-lg px-container-margin flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-low border-t border-outline/5 mb-16 md:mb-0">
+<div class="text-headline-sm font-headline-sm font-bold text-primary">FerIA</div>
+<div class="flex gap-lg flex-wrap justify-center">
+<a class="text-on-surface-variant hover:text-primary font-label-sm" href="#">Social Mission</a>
+<a class="text-on-surface-variant hover:text-primary font-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary font-label-sm" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary font-label-sm" href="#">Privacy Policy</a>
+</div>
+<div class="text-on-surface-variant text-body-md">
+            © 2024 FerIA - Made for Palpalá with Community Pride
+        </div>
+</footer>
+<script>
+        // Micro-interaction: Scale effect on scroll for images
+        window.addEventListener('scroll', () => {
+            const img = document.querySelector('img[data-alt]');
+            const scroll = window.scrollY;
+            if (img) {
+                img.style.transform = `scale(${1 + scroll * 0.0001})`;
+            }
+        });
+
+        // Simple tab switching for gallery
+        document.querySelectorAll('.aspect-square.cursor-pointer').forEach(item => {
+            item.addEventListener('click', function() {
+                const mainImg = document.querySelector('img[data-alt]');
+                const newSrc = this.querySelector('img').src;
+                mainImg.src = newSrc;
+                
+                // Visual feedback
+                document.querySelectorAll('.aspect-square').forEach(thumb => thumb.classList.remove('border-primary'));
+                document.querySelectorAll('.aspect-square').forEach(thumb => thumb.classList.add('border-outline/10'));
+                this.classList.remove('border-outline/10');
+                this.classList.add('border-primary');
+            });
+        });
+    </script>
+</body></html>

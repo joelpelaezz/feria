@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Usuario {
+  id        String   @id @default(cuid())
+  telefono  String   @unique
+  pinHash   String
+  nombre    String?
+  rol       String   @default("comerciante") // comerciante | cargador | admin
+  activo    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  comerciante       Comerciante?
+  productosCreados  Producto[]   @relation("Creador")
+}
+
+model Comerciante {
+  id            String   @id @default(cuid())
+  usuarioId     String   @unique
+  usuario       Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  nombre        String
+  descripcion   String?
+  fotoPerfil    String?
+  whatsapp      String
+  tipoUbicacion String   @default("puesto_fijo") // puesto_fijo | ambulante | domicilio
+  ubicacion     String?
+  dias          String?
+  horario       String?
+  slug          String   @unique
+  activo        Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  ferias    ComercianteFeria[]
+  productos Producto[]
+}
+
+model Feria {
+  id        String   @id @default(cuid())
+  nombre    String
+  direccion String?
+  lat       Float?
+  lng       Float?
+  dias      String
+  horario   String?
+  activa    Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  comerciantes ComercianteFeria[]
+}
+
+model ComercianteFeria {
+  id            String      @id @default(cuid())
+  comercianteId String
+  feriaId       String
+  puesto        String?
+  comerciante   Comerciante @relation(fields: [comercianteId], references: [id], onDelete: Cascade)
+  feria         Feria       @relation(fields: [feriaId], references: [id], onDelete: Cascade)
+
+  @@unique([comercianteId, feriaId])
+}
+
+model Categoria {
+  id       String    @id @default(cuid())
+  nombre   String    @unique
+  activa   Boolean   @default(true)
+  productos Producto[]
+}
+
+model Producto {
+  id                   String   @id @default(cuid())
+  comercianteId        String
+  comerciante          Comerciante @relation(fields: [comercianteId], references: [id], onDelete: Cascade)
+  categoriaId          String?
+  categoria            Categoria?  @relation(fields: [categoriaId], references: [id])
+  titulo               String
+  descripcion          String?
+  precio               Float
+  talle                String?
+  tipo                 String   @default("usado") // usado | nuevo
+  stock                Int      @default(1)
+  fotos                String   @default("[]") // JSON array de URLs
+  aceptaTrueque        Boolean  @default(false)
+  buscaCambio          String?
+  disponibleEnFeria    Boolean  @default(true)
+  disponibleEnDomicilio Boolean @default(false)
+  estado               String   @default("publicado") // publicado | vendido | agotado | borrador
+  demandaPerdida       Int      @default(0) // Consultas cuando stock = 0
+  creadoPorId          String?
+  creadoPor            Usuario? @relation("Creador", fields: [creadoPorId], references: [id])
+  publicado            Boolean  @default(true)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  ventas    Venta[]
+  consultas Consulta[]
+}
+
+model Venta {
+  id         String   @id @default(cuid())
+  productoId String
+  producto   Producto @relation(fields: [productoId], references: [id], onDelete: Cascade)
+  cantidad   Int      @default(1)
+  monto      Float
+  createdAt  DateTime @default(now())
+}
+
+model Consulta {
+  id               String   @id @default(cuid())
+  productoId       String
+  producto         Producto @relation(fields: [productoId], references: [id], onDelete: Cascade)
+  nombreContacto   String?
+  telefonoContacto String?
+  origen           String   @default("whatsapp") // whatsapp | web | qr
+  createdAt        DateTime @default(now())
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .swap-card {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .swap-card:active {
+            transform: scale(0.98);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#436b58",
+                        "on-primary-container": "#fffcff",
+                        "secondary-fixed": "#c1ecd4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fcf9f8",
+                        "surface-tint": "#aa3618",
+                        "on-secondary-fixed": "#002114",
+                        "on-surface-variant": "#58413c",
+                        "on-error": "#ffffff",
+                        "secondary": "#3f6653",
+                        "tertiary-fixed-dim": "#ffb780",
+                        "primary-fixed-dim": "#ffb4a2",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary-container": "#c84c2c",
+                        "tertiary-fixed": "#ffdcc4",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary-fixed-variant": "#881f01",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#ffdbd2",
+                        "tertiary-container": "#a96429",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#8c716a",
+                        "surface-container": "#f0eded",
+                        "on-tertiary-fixed-variant": "#6f3800",
+                        "surface-variant": "#e5e2e1",
+                        "on-tertiary-fixed": "#2f1400",
+                        "background": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "on-surface": "#1c1b1b",
+                        "on-background": "#1c1b1b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#8b4c11",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#274e3d",
+                        "primary": "#a63416",
+                        "secondary-container": "#beead1",
+                        "inverse-primary": "#ffb4a2",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary-fixed": "#3c0800",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#a5d0b9",
+                        "outline-variant": "#e0bfb8",
+                        "on-tertiary-container": "#fffcff",
+                        "surface-dim": "#dcd9d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "gutter": "12px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "md": "20px",
+                        "lg": "32px",
+                        "container-margin": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Lexend"],
+                        "headline-sm": ["Lexend"],
+                        "label-sm": ["Lexend"],
+                        "label-lg": ["Lexend"],
+                        "display-lg": ["Lexend"],
+                        "body-md": ["Lexend"],
+                        "headline-md": ["Lexend"],
+                        "price-display": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["14px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "label-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "price-display": ["22px", {"lineHeight": "24px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 max-w-7xl mx-auto border-b border-outline/10 bg-surface dark:bg-surface">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">FerIA</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Catalog</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Fairs</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-200" href="#">Swap</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Impact</a>
+</nav>
+<button class="bg-primary text-on-primary px-md py-xs rounded-lg font-label-lg hover:opacity-90 transition-opacity">Merchant Login</button>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin py-lg pb-32 md:pb-lg">
+<!-- Visual Header -->
+<section class="mb-xl bg-primary-container rounded-xl p-lg text-on-primary-container flex flex-col md:flex-row items-center gap-lg overflow-hidden relative">
+<div class="z-10 flex-1">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full text-label-sm font-bold mb-md inline-block">COMUNIDAD PALPALÁ</span>
+<h1 class="font-display-lg text-display-lg mb-sm">Club del Trueque</h1>
+<p class="font-body-lg text-body-lg max-w-xl opacity-90">Intercambiamos valores, no solo cosas. Descubre productos locales disponibles para trueque directo y fortalece nuestra economía circular.</p>
+</div>
+<div class="relative w-full md:w-1/3 aspect-square md:aspect-video rounded-lg overflow-hidden">
+<img class="object-cover w-full h-full" data-alt="A vibrant outdoor community exchange market in a sun-drenched square, featuring colorful artisanal textiles and local pottery spread across wooden tables. The scene is captured in high-contrast light with a warm terracotta and forest green color palette, evoking a sense of communal trust and vibrant artisanal energy. The atmosphere is bustling yet friendly, reflecting a modern-artisanal lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDvPPWiHh4H4rsaDJgCgYVnK8mp8EkUQwpXfm3nlfCeljawebsFuMQLt25hHyWC38K_xlc0kfFwaOt1jQQ4f1YVQ1C3Mrmdz2WL1H18fGEWintjjHts1Br4lsQUKHEpq-i-GfcGncU-3G45wATDZJo7GWoZ3_gVNV37Z1TY0QaT8hR-BaSwlXWdg4Gg3dRwS8o55TBjcLv2n6u7_QhdqOOCLE50e3f7YEBawhUlD1PnWqirrbxlgYqZuK_uSZIPdte9bVpcKrA0tIf"/>
+</div>
+</section>
+<!-- Informative Section -->
+<section class="mb-xl bg-surface-container-low p-lg rounded-xl border border-outline/10">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">¿Cómo funciona el trueque?</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-lg">
+<div class="flex flex-col gap-xs">
+<div class="text-label-lg font-bold text-tertiary">1. Explora</div>
+<p class="text-body-md text-on-surface-variant">Revisa los productos marcados con la insignia de "Trueque" y mira qué solicita el dueño a cambio.</p>
+</div>
+<div class="flex flex-col gap-xs">
+<div class="text-label-lg font-bold text-tertiary">2. Propón</div>
+<p class="text-body-md text-on-surface-variant">Usa el botón "Proponer trueque" para enviar un mensaje directo por WhatsApp con tu oferta.</p>
+</div>
+<div class="flex flex-col gap-xs">
+<div class="text-label-lg font-bold text-tertiary">3. Intercambia</div>
+<p class="text-body-md text-on-surface-variant">Coordina el punto de encuentro en Palpalá y realiza el intercambio de mano en mano de forma segura.</p>
+</div>
+</div>
+</section>
+<!-- Grid of Swap Products -->
+<div class="bento-grid">
+<!-- Card 1 -->
+<article class="swap-card bg-surface border border-outline/20 rounded-xl overflow-hidden flex flex-col h-full group">
+<div class="relative aspect-square">
+<img class="object-cover w-full h-full" data-alt="A beautifully handcrafted ceramic bowl with earth-toned glazes, sitting on a rustic wooden surface under bright natural sunlight. The image has a clean, high-contrast look that emphasizes the tactile texture of the pottery and the vibrant deep terracotta colors. Soft shadows and a minimalist background create a modern yet artisanal aesthetic perfectly suited for a local marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM1EsPuob7m5aJgcKnta1GmbfIQo32yO3qeKWLbco0zuQUPvaDAhNHv5CIz786S3WKCCO_VtpJ8r8-jyP0EuOh2le-zoaD6f0F1-3abZx3M0pTnev0diKb8OcpkxDcafgIHGobn5-PfkaIbasmzVAXqZyxcuIfqMw6M_Q1rKEGjIgQTadqssCkLGEwfuI29ubunwrIZwjM7U0XV9T9UIgDdhHRNa-KQVkNZhNXomLIoMVaX_vkSgnAOOq-y-M-z_IZ3xgIdSnGnqIm"/>
+<div class="absolute top-sm left-sm bg-tertiary-fixed text-on-tertiary-fixed px-sm py-xs rounded font-label-sm font-bold flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="sync_alt">sync_alt</span>
+                        TRUEQUE
+                    </div>
+<div class="absolute bottom-sm right-sm bg-secondary text-on-secondary px-sm py-xs rounded font-label-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        Verificado
+                    </div>
+</div>
+<div class="p-md flex-1 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm mb-xs">Cuenco de Barro Cocido</h3>
+<p class="text-body-md text-on-surface-variant mb-md">Hecho a mano en el taller local. Diámetro 20cm.</p>
+<div class="mt-auto bg-surface-container p-sm rounded-lg mb-md">
+<span class="text-label-sm text-secondary font-bold block mb-1">CAMBIO POR:</span>
+<p class="text-body-md font-bold text-on-surface">3kg de limones de huerta o miel artesanal.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-lg py-sm rounded-lg flex items-center justify-center gap-sm hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                        Proponer trueque
+                    </button>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="swap-card bg-surface border border-outline/20 rounded-xl overflow-hidden flex flex-col h-full group">
+<div class="relative aspect-square">
+<img class="object-cover w-full h-full" data-alt="A stack of folded hand-woven woolen ponchos with traditional Andean patterns in vibrant earthy tones. The fabrics are displayed in a clean, high-key lighting environment that highlights the intricate weaving and rich textures. The color palette features deep greens, burnt oranges, and soft creams, conveying a premium artisanal quality and local cultural pride." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjl0-e_TZTyVorfaggFGacnXR9KM8Iu18SfLoTJJrcT_lB-lqgUY99ZHH8nnsQj3lZCFBqKj0iRLUAP90xefPELnU9xArOyylyCJoxlu6DWfAdYVtju8f_vDmxZ5RFOirZJfpuPm9aJNQeTavcPQxxtTPZXH64RyaZmqqdk9QoLTUofT0RWkHMPUJasHtVGYarCu8482FfIWq7X6-P_NUsRBZKzH4r24JsauhOzBJ2ukFaCEM6WXgDaEc4TxIqqCZwneJMv8mF6U41"/>
+<div class="absolute top-sm left-sm bg-tertiary-fixed text-on-tertiary-fixed px-sm py-xs rounded font-label-sm font-bold flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="sync_alt">sync_alt</span>
+                        TRUEQUE
+                    </div>
+</div>
+<div class="p-md flex-1 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm mb-xs">Manta de Lana pura</h3>
+<p class="text-body-md text-on-surface-variant mb-md">Tejida en telar tradicional con lana de oveja local.</p>
+<div class="mt-auto bg-surface-container p-sm rounded-lg mb-md">
+<span class="text-label-sm text-secondary font-bold block mb-1">CAMBIO POR:</span>
+<p class="text-body-md font-bold text-on-surface">Herramientas de jardinería o abono orgánico.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-lg py-sm rounded-lg flex items-center justify-center gap-sm hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                        Proponer trueque
+                    </button>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="swap-card bg-surface border border-outline/20 rounded-xl overflow-hidden flex flex-col h-full group">
+<div class="relative aspect-square">
+<img class="object-cover w-full h-full" data-alt="Assorted jars of homemade fruit preserves and jams lined up on a rustic shelf. The labels are handwritten, adding a personal, community-oriented touch. The lighting is bright and airy, making the vibrant colors of the fruits pop against the neutral background. The overall aesthetic is one of homey warmth and high-quality local produce, emphasizing a neighborly connection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMeCqDozWB5fpeGfV5CKY4HehnYukJmdf4-ZFO3axzuyZ2aCQT9o5JvWaUgJFtbmZmE7d-H95iXGTqTJf4JcRN9XjQYTPXlsS_Uy8KP5EefI7vGuwn4c4l0h1BnLnyc46mDk67orE7yT-EWmmc0u0IWl8Gmgq1CSMGSyz6LEKiOGIiv7J3XWOzj9ErPw5FRDcoxmx5SMlHS4RmJt69H9IrI1XJl8yiOjLjNHb95RHb58LcU4xNOTD_iFMZte2LH6jsZY4of-ev004i"/>
+<div class="absolute top-sm left-sm bg-tertiary-fixed text-on-tertiary-fixed px-sm py-xs rounded font-label-sm font-bold flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="sync_alt">sync_alt</span>
+                        TRUEQUE
+                    </div>
+<div class="absolute bottom-sm right-sm bg-secondary text-on-secondary px-sm py-xs rounded font-label-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        Verificado
+                    </div>
+</div>
+<div class="p-md flex-1 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm mb-xs">Dulce de Cayote Casero</h3>
+<p class="text-body-md text-on-surface-variant mb-md">Frascos de 500gr, receta familiar sin conservantes.</p>
+<div class="mt-auto bg-surface-container p-sm rounded-lg mb-md">
+<span class="text-label-sm text-secondary font-bold block mb-1">CAMBIO POR:</span>
+<p class="text-body-md font-bold text-on-surface">Fruta de estación o nueces peladas.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-lg py-sm rounded-lg flex items-center justify-center gap-sm hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                        Proponer trueque
+                    </button>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="swap-card bg-surface border border-outline/20 rounded-xl overflow-hidden flex flex-col h-full group">
+<div class="relative aspect-square">
+<img class="object-cover w-full h-full" data-alt="A vintage style wooden birdhouse with colorful hand-painted details, hanging from a tree branch in a lush garden. The sunlight filters through leaves, creating dynamic high-contrast patterns. The style is charmingly artisanal, emphasizing high-performance outdoor durability and vibrant neighborly pride through its bright green and terracotta accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOUoEo2S9VILo8dAV8x1q0gzpVMWbDCCXlekbxdlbbm2Vll7n6DW-iTJfeRh2Gg3LqYhGp47t7-iWjNEY8P_yesARnLTA3T8HCN1NmXCrX1juKZeSO4pINM81nsLp6FdLdd0XenEu0sjX78NuM9yTEAIS9wsPFftYKoAjGLr73uaSvQIanroK_OGfaOL3na5OH1YwAvgqwIWhMq_BggQGpElBJRlgmG8Z2p69S6TBxW0vpd4AVvrITeRsBlpJnfuhmsHLukyoEHcIE"/>
+<div class="absolute top-sm left-sm bg-tertiary-fixed text-on-tertiary-fixed px-sm py-xs rounded font-label-sm font-bold flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="sync_alt">sync_alt</span>
+                        TRUEQUE
+                    </div>
+</div>
+<div class="p-md flex-1 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm mb-xs">Casita para Pájaros</h3>
+<p class="text-body-md text-on-surface-variant mb-md">Madera reciclada y barnizada para exterior.</p>
+<div class="mt-auto bg-surface-container p-sm rounded-lg mb-md">
+<span class="text-label-sm text-secondary font-bold block mb-1">CAMBIO POR:</span>
+<p class="text-body-md font-bold text-on-surface">Plantas de interior o suculentas raras.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-lg py-sm rounded-lg flex items-center justify-center gap-sm hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                        Proponer trueque
+                    </button>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-lg px-container-margin flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-low border-t border-outline/5">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<div class="text-headline-sm font-headline-sm font-bold text-primary">FerIA</div>
+<p class="text-body-md font-body-md text-on-surface-variant text-center md:text-left">© 2024 FerIA - Made for Palpalá with Community Pride</p>
+</div>
+<div class="flex gap-md flex-wrap justify-center">
+<a class="text-on-surface-variant hover:text-primary text-label-sm font-label-sm" href="#">Social Mission</a>
+<a class="text-on-surface-variant hover:text-primary text-label-sm font-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary text-label-sm font-label-sm" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary text-label-sm font-label-sm" href="#">Privacy Policy</a>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 md:hidden border-t border-outline/10 bg-surface dark:bg-surface">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="text-label-sm font-label-sm">Catalog</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="sync_alt">sync_alt</span>
+<span class="text-label-sm font-label-sm">Swap</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="Analytics">analytics</span>
+<span class="text-label-sm font-label-sm">Impact</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.add('opacity-80');
+                setTimeout(() => this.classList.remove('opacity-80'), 150);
+            });
+        });
+
+        // Simple visibility effect for cards on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.swap-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#436b58",
+                    "on-primary-container": "#fffcff",
+                    "secondary-fixed": "#c1ecd4",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf9f8",
+                    "surface-tint": "#aa3618",
+                    "on-secondary-fixed": "#002114",
+                    "on-surface-variant": "#58413c",
+                    "on-error": "#ffffff",
+                    "secondary": "#3f6653",
+                    "tertiary-fixed-dim": "#ffb780",
+                    "primary-fixed-dim": "#ffb4a2",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary-container": "#c84c2c",
+                    "tertiary-fixed": "#ffdcc4",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary-fixed-variant": "#881f01",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#ffdbd2",
+                    "tertiary-container": "#a96429",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#8c716a",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-fixed-variant": "#6f3800",
+                    "surface-variant": "#e5e2e1",
+                    "on-tertiary-fixed": "#2f1400",
+                    "background": "#fcf9f8",
+                    "inverse-surface": "#313030",
+                    "on-surface": "#1c1b1b",
+                    "on-background": "#1c1b1b",
+                    "inverse-on-surface": "#f3f0ef",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#8b4c11",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#274e3d",
+                    "primary": "#a63416",
+                    "secondary-container": "#beead1",
+                    "inverse-primary": "#ffb4a2",
+                    "surface-container-high": "#eae7e7",
+                    "on-primary-fixed": "#3c0800",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#a5d0b9",
+                    "outline-variant": "#e0bfb8",
+                    "on-tertiary-container": "#fffcff",
+                    "surface-dim": "#dcd9d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "48px",
+                    "gutter": "12px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "md": "20px",
+                    "lg": "32px",
+                    "container-margin": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Lexend"],
+                    "headline-sm": ["Lexend"],
+                    "label-sm": ["Lexend"],
+                    "label-lg": ["Lexend"],
+                    "display-lg": ["Lexend"],
+                    "body-md": ["Lexend"],
+                    "headline-md": ["Lexend"],
+                    "price-display": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["14px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "label-lg": ["16px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "price-display": ["22px", {"lineHeight": "24px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #a63416 !important;
+            box-shadow: 0 0 0 1px #a63416;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e5e2e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 max-w-7xl mx-auto border-b border-outline/10 bg-surface dark:bg-surface">
+<div class="flex items-center gap-2">
+<button class="p-2 -ml-2">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">FerIA</h1>
+</div>
+<div class="hidden md:flex gap-md items-center">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Catalog</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Fairs</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Swap</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Impact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block px-4 py-2 rounded-full border border-primary text-primary font-label-lg hover:bg-primary-fixed transition-colors">Merchant Login</button>
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-xl mx-auto px-container-margin py-lg pb-32">
+<!-- Page Title -->
+<div class="mb-lg">
+<h2 class="text-display-lg font-display-lg text-on-surface">Cargar Producto</h2>
+<p class="text-on-surface-variant mt-2 font-body-md">Comparte lo que tienes con la comunidad de Palpalá.</p>
+</div>
+<form class="space-y-lg" id="product-form">
+<!-- Photo Upload Area -->
+<section>
+<label class="block text-label-lg font-label-lg mb-sm text-on-surface">Fotos del Producto</label>
+<div class="relative group aspect-square rounded-xl border-2 border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center cursor-pointer hover:border-primary transition-all overflow-hidden" id="image-upload">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity" data-alt="A high-contrast photography studio setup with warm, terracotta-toned lighting reflecting off a clean wooden floor. The background is a soft, creamy neutral, creating a welcoming and communal atmosphere. A single, handcrafted leather sandal sits prominently in the center, symbolizing local artisanal quality. The image uses professional product lighting to emphasize textures and rich, earthy colors typical of the modern-artisanal design system." id="preview-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk8gfde5RCPcygckOIElTc1WzhrWqDId8mLgPRprgNItreZwPR_uVB-OdQ6owE-5fleRAcvSVeYwqqcwmDHlyREqxmMePJK7Pk1f-u-xVKS6vHpYO9sePZRxffxRQPpI92ISe5ZJ8eht4IsXrdM9xtjqSwCvbHN7rFHuqIx1fKSQujF-CFOhBxGd-KTcl5K3tXkRvszDGjZyKtBTCu3vY0M4JxyhE4Typ70_U_KMg-toYrgLcK2Tiooa4ANLgzQTWOEbWBGhk1CsU_"/>
+<div class="z-10 flex flex-col items-center text-center p-md">
+<span class="material-symbols-outlined text-primary text-5xl mb-2">add_a_photo</span>
+<p class="font-label-lg text-primary">Subir desde Galería o Cámara</p>
+<p class="text-label-sm text-on-surface-variant mt-1">Sugerimos fotos con luz natural para vender más rápido.</p>
+</div>
+</div>
+</section>
+<!-- Basic Info Fields -->
+<section class="space-y-md">
+<div>
+<label class="block text-label-lg font-label-lg mb-xs text-on-surface" for="title">Título del Producto</label>
+<input class="w-full h-14 px-md rounded-lg border-2 border-outline-variant bg-surface-container-lowest text-on-surface font-body-md placeholder:text-outline-variant" id="title" name="title" placeholder="Ej: Zapatillas de lona bordadas" type="text"/>
+</div>
+<div>
+<label class="block text-label-lg font-label-lg mb-xs text-on-surface" for="description">Descripción Corta</label>
+<textarea class="w-full p-md rounded-lg border-2 border-outline-variant bg-surface-container-lowest text-on-surface font-body-md placeholder:text-outline-variant resize-none" id="description" name="description" placeholder="Contanos los detalles más importantes..." rows="3"></textarea>
+</div>
+</section>
+<!-- Price & Specs Grid -->
+<section class="grid grid-cols-2 gap-md">
+<div>
+<label class="block text-label-lg font-label-lg mb-xs text-on-surface" for="price">Precio ($)</label>
+<div class="relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant font-price-display">$</span>
+<input class="w-full h-14 pl-10 pr-md rounded-lg border-2 border-outline-variant bg-surface-container-lowest text-on-surface font-price-display placeholder:text-outline-variant" id="price" name="price" placeholder="0.00" type="number"/>
+</div>
+</div>
+<div>
+<label class="block text-label-lg font-label-lg mb-xs text-on-surface" for="condition">Estado</label>
+<select class="w-full h-14 px-md rounded-lg border-2 border-outline-variant bg-surface-container-lowest text-on-surface font-body-md appearance-none" id="condition" name="condition">
+<option value="new">Nuevo</option>
+<option value="used_excellent">Usado - Como nuevo</option>
+<option value="used_good">Usado - Buen estado</option>
+<option value="used_fair">Usado - Detalles</option>
+</select>
+</div>
+<div>
+<label class="block text-label-lg font-label-lg mb-xs text-on-surface" for="size">Talle / Medida</label>
+<input class="w-full h-14 px-md rounded-lg border-2 border-outline-variant bg-surface-container-lowest text-on-surface font-body-md placeholder:text-outline-variant" id="size" name="size" placeholder="Ej: 38, L, 20cm" type="text"/>
+</div>
+<div>
+<label class="block text-label-lg font-label-lg mb-xs text-on-surface" for="stock">Stock disponible</label>
+<input class="w-full h-14 px-md rounded-lg border-2 border-outline-variant bg-surface-container-lowest text-on-surface font-body-md" id="stock" min="1" name="stock" type="number" value="1"/>
+</div>
+</section>
+<!-- Categories & Availability -->
+<section class="space-y-md">
+<div>
+<label class="block text-label-lg font-label-lg mb-sm text-on-surface">Categoría</label>
+<div class="flex flex-wrap gap-sm">
+<label class="cursor-pointer">
+<input class="hidden peer" name="category" type="radio" value="clothing"/>
+<span class="px-md py-sm rounded-full border-2 border-outline-variant text-on-surface-variant peer-checked:bg-secondary-container peer-checked:border-secondary peer-checked:text-on-secondary-container transition-all inline-block font-label-lg">Indumentaria</span>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="category" type="radio" value="home"/>
+<span class="px-md py-sm rounded-full border-2 border-outline-variant text-on-surface-variant peer-checked:bg-secondary-container peer-checked:border-secondary peer-checked:text-on-secondary-container transition-all inline-block font-label-lg">Hogar</span>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="category" type="radio" value="tech"/>
+<span class="px-md py-sm rounded-full border-2 border-outline-variant text-on-surface-variant peer-checked:bg-secondary-container peer-checked:border-secondary peer-checked:text-on-secondary-container transition-all inline-block font-label-lg">Tecnología</span>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="category" type="radio" value="others"/>
+<span class="px-md py-sm rounded-full border-2 border-outline-variant text-on-surface-variant peer-checked:bg-secondary-container peer-checked:border-secondary peer-checked:text-on-secondary-container transition-all inline-block font-label-lg">Otros</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-label-lg font-label-lg mb-sm text-on-surface">¿Dónde está disponible?</label>
+<div class="grid grid-cols-3 gap-sm">
+<label class="flex flex-col items-center gap-2 p-sm rounded-xl border-2 border-outline-variant cursor-pointer has-[:checked]:bg-primary-fixed has-[:checked]:border-primary has-[:checked]:text-on-primary-fixed transition-all text-center">
+<input class="hidden" name="availability" type="radio" value="feria"/>
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-label-sm">Feria</span>
+</label>
+<label class="flex flex-col items-center gap-2 p-sm rounded-xl border-2 border-outline-variant cursor-pointer has-[:checked]:bg-primary-fixed has-[:checked]:border-primary has-[:checked]:text-on-primary-fixed transition-all text-center">
+<input class="hidden" name="availability" type="radio" value="home"/>
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm">Domicilio</span>
+</label>
+<label class="flex flex-col items-center gap-2 p-sm rounded-xl border-2 border-outline-variant cursor-pointer has-[:checked]:bg-primary-fixed has-[:checked]:border-primary has-[:checked]:text-on-primary-fixed transition-all text-center">
+<input checked="" class="hidden" name="availability" type="radio" value="both"/>
+<span class="material-symbols-outlined">location_on</span>
+<span class="text-label-sm">Ambos</span>
+</label>
+</div>
+</div>
+</section>
+<!-- Swap Toggle Section -->
+<section class="bg-secondary-container/30 p-md rounded-2xl border border-secondary/10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">sync_alt</span>
+<div>
+<p class="font-label-lg text-on-secondary-fixed-variant">Acepto Trueque</p>
+<p class="text-label-sm text-on-secondary-container opacity-80">Permitir que te ofrezcan cambios</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="swap-toggle" type="checkbox"/>
+<div class="w-14 h-8 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:start-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="hidden mt-md" id="swap-details">
+<label class="block text-label-lg font-label-lg mb-xs text-on-secondary-fixed-variant" for="swap_looking">¿Qué buscas a cambio?</label>
+<textarea class="w-full p-md rounded-lg border-2 border-secondary/20 bg-surface-container-lowest text-on-surface font-body-md placeholder:text-outline-variant/60 resize-none" id="swap_looking" name="swap_looking" placeholder="Ej: Busco herramientas de carpintería o calzado talle 40..."></textarea>
+</div>
+</section>
+<!-- Submit Button -->
+<button class="w-full h-16 bg-primary text-on-primary rounded-xl font-label-lg text-lg flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-lg shadow-primary/20" type="submit">
+                Publicar Producto
+                <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</main>
+<!-- Footer Navigation (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-surface dark:bg-surface border-t border-outline/10 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-label-sm font-label-sm">Catalog</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">add_box</span>
+<span class="text-label-sm font-label-sm">Publicar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">sync_alt</span>
+<span class="text-label-sm font-label-sm">Swap</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Desktop Footer -->
+<footer class="w-full py-lg px-container-margin flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-low border-t border-outline/5 hidden md:flex">
+<div class="flex flex-col gap-2">
+<h3 class="text-headline-sm font-headline-sm font-bold text-primary">FerIA</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">© 2024 FerIA - Made for Palpalá with Community Pride</p>
+</div>
+<div class="flex gap-lg">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary" href="#">Social Mission</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary" href="#">Terms of Service</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary" href="#">Help Center</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary" href="#">Privacy Policy</a>
+</div>
+</footer>
+<script>
+        // Toggle Swap Details logic
+        const swapToggle = document.getElementById('swap-toggle');
+        const swapDetails = document.getElementById('swap-details');
+        
+        swapToggle.addEventListener('change', (e) => {
+            if(e.target.checked) {
+                swapDetails.classList.remove('hidden');
+                swapDetails.classList.add('block');
+            } else {
+                swapDetails.classList.add('hidden');
+                swapDetails.classList.remove('block');
+            }
+        });
+
+        // Simple photo upload simulation
+        const uploadArea = document.getElementById('image-upload');
+        uploadArea.addEventListener('click', () => {
+            alert('Abriendo galería del dispositivo...');
+        });
+
+        // Form submission prevention for demo
+        document.getElementById('product-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Producto publicado con éxito en la red de Palpalá!');
+        });
+    </script>
+</body></html>
