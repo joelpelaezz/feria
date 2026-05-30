@@ -46,35 +46,56 @@ export default async function FeriasPage() {
         </div>
       ) : (
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {ferias.map((feria) => (
-            <Link
-              key={feria.id}
-              href={`/productos?feriaId=${feria.id}`}
-              className="card-pressable block p-5 no-underline"
-            >
-              <h2 className="font-semibold text-on-surface text-lg">
-                {feria.nombre}
-              </h2>
-              {feria.direccion && (
-                <p className="mt-1 body-md text-on-surface-variant">
-                  📍 {feria.direccion}
-                </p>
-              )}
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="badge-outline">{feria.dias}</span>
-                <span
-                  className="rounded-full px-3 py-1 label-sm text-on-surface-variant"
-                  style={{ backgroundColor: "var(--color-surface-container-highest)" }}
+          {ferias.map((feria) => {
+            const mapsUrl = feria.lat && feria.lng
+              ? `https://www.google.com/maps/@${feria.lat},${feria.lng},15z`
+              : null;
+
+            return (
+              <div key={feria.id} className="card-pressable block p-5">
+                <Link
+                  href={`/productos?feriaId=${feria.id}`}
+                  className="no-underline group"
                 >
-                  {feria.horario}
-                </span>
+                  <h2 className="font-semibold text-on-surface text-lg group-hover:text-primary transition-colors">
+                    {feria.nombre}
+                  </h2>
+                </Link>
+
+                {feria.direccion && (
+                  <p className="mt-1 body-md text-on-surface-variant">
+                    📍{" "}
+                    {mapsUrl ? (
+                      <a
+                        href={mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary transition-colors"
+                      >
+                        {feria.direccion}
+                      </a>
+                    ) : (
+                      feria.direccion
+                    )}
+                  </p>
+                )}
+
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span className="badge-outline">{feria.dias}</span>
+                  <span
+                    className="rounded-full px-3 py-1 label-sm text-on-surface-variant"
+                    style={{ backgroundColor: "var(--color-surface-container-highest)" }}
+                  >
+                    {feria.horario}
+                  </span>
+                </div>
+                <p className="mt-3 label-sm font-medium text-primary">
+                  {feria._count.comerciantes} comerciante
+                  {feria._count.comerciantes !== 1 ? "s" : ""}
+                </p>
               </div>
-              <p className="mt-3 label-sm font-medium text-primary">
-                {feria._count.comerciantes} comerciante
-                {feria._count.comerciantes !== 1 ? "s" : ""}
-              </p>
-            </Link>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>
