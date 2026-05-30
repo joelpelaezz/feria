@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { FeriaMapWrapper } from "@/components/map/FeriaMapWrapper";
 
 export interface Feria {
   id: string;
@@ -38,13 +37,6 @@ export default async function FeriasPage() {
       <p className="mt-1 body-md text-on-surface-variant">
         Conocé las ferias de Palpalá y descubrí qué ofrecen.
       </p>
-
-      {/* Mapa */}
-      {ferias.length > 0 && (
-        <div className="mt-6">
-          <FeriaMapWrapper ferias={ferias} />
-        </div>
-      )}
 
       {ferias.length === 0 ? (
         <div className="mt-12 text-center">
