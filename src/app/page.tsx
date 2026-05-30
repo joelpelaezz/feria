@@ -3,6 +3,8 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { getPrimaryProductPhoto } from "@/lib/product-images";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "FerIA — Catálogo Social de Ferias de Palpalá",
   description:

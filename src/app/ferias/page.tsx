@@ -15,6 +15,8 @@ export interface Feria {
   _count?: { comerciantes: number };
 }
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Ferias",
   description: "Conocé todas las ferias de Palpalá, Jujuy. Encontrá productos locales, artesanías, ropa y más.",
